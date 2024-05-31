@@ -1,0 +1,63 @@
+            *
+            {
+                margin: 0px;
+                padding: 0px;
+                border: 0px;
+            }
+            
+            a:link
+            {
+                color: rgb(255,0,255);
+                background-color: transparent;
+                text-decoration: none;
+            }
+            a:visited
+            {
+                 color : rgb(255,0,255);
+            } 
+            a:hover
+            {
+                 color : #ff7043;
+            } 
+            a:active
+            {
+                 color : #ff7043;
+            } 
+            
+            body
+            {
+                color: rgb(200, 200, 200);
+                background-color: rgb(0,128,128);
+                font-family: 'Site Font';
+                background-image: url("../IMG/back.bmp");
+            }
+
+            footer
+            {
+                margin-left:15px;
+                text-align: center;
+            }
+
+            h1
+            {
+                font-weight:unset;
+            }
+
+            .main_content
+            {
+                padding-top: 12px;
+                padding-left: 20px;
+            }
+
+            header
+            {
+                color: white;
+            }
+            footer
+            {
+                text-align: center;
+            }
+            .copyright
+            {
+                text-align: center;
+            }

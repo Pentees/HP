@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="ja-JP">
+    <head>
+        <meta charset="UTF-8">
+        <title>ようこそ</title>
+        <link rel="stylesheet" href="../style/common.css">
+        <link rel="icon" href="./common/favicon.png">
+        <script>
+            fetch("./common/header.html")
+              .then((response) => response.text())
+              .then((data) => document.querySelector("#menu").innerHTML = data);
+            fetch("./common/footer.html")
+              .then((response) => response.text())
+              .then((data) => document.querySelector("#footer").innerHTML = data);
+          </script>
+    </head>
+    <body>
+        <div id="menu" style="display: inline;"></div>
+        <div class="main_content">
+            <h1>よおこそ</h1>
+            <h5><br></h5>
+            <h3>サイトの制作主について</h3>
+            どこにでもいるような私立の高校生<br>
+            一応関西在住<br>
+            ブルアカと東方が主な生息域<br>
+            <br>
+            <h3>各種SNSのリンク</h3>
+            <a href="./link.html" class="NTL">こ↑こ↓</a>からどうぞ<br>
+            (...まあ、あんま浮上しないけど)<br>
+            <br>
+            <h3>リンク</h3>    
+            <h4>http://</h4>
+            ↑ここのリンクです　張りたい方勝手に張って、どうぞ<br>
+            張ったこと報告したい方はメールのほうまで<br>
+            <br>
+            <h3>名前の呼び方</h3>
+            Pentas(ペンタス)という名前ですが、公序良俗に反しないお好きな呼び方で呼んでくださいな<br>
+            <br>
+            <div id="footer" style="display: inline;"></div>
+        </div>
+    </body>
+</html>

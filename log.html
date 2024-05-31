@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="ja-JP">
+    <head>
+        <title>諸々の歴史</title>
+        <link rel="stylesheet" href="../style/common.css" type="text/css">
+        <script>
+            fetch("./footer.html")
+              .then((response) => response.text())
+              .then((data) => document.querySelector("#footer").innerHTML = data);
+          </script>
+    </head>
+    <body>
+        <div class="menu" style="display: inline;">
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./build.html" class="current_type">Build</a></li>
+                <li><a href="./link.html">Link</a></li>
+            </ul>
+        </div>
+        <div class="main_content">
+            <h1>Update and Relese Info</h1>
+            <br>
+            2023-11-22 Published This Site.(Version. 1.00.2311a)<br>
+            2023-11-22 Published This Site.<br>
+        </div>
+        <div id="footer" style="display: inline;"></div>
+    </body>
+</html>

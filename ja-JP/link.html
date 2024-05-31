@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="ja-JP">
+    <head>
+        <meta charset="UTF-8">
+        <title>Link</title>
+        <link rel="stylesheet" href="../style/common.css">
+        <style>
+        #message
+        {
+            opacity: 0;
+            &.is-active
+            {
+                opacity: 1;  
+            }
+        }
+        </style>
+        <script>
+            fetch("./common/header.html")
+              .then((response) => response.text())
+              .then((data) => document.querySelector("#menu").innerHTML = data);
+            fetch("./common/footer.html")
+              .then((response) => response.text())
+              .then((data) => document.querySelector("#footer").innerHTML = data);
+          </script>
+    </head>
+    <body>
+        <div id="menu" style="display: inline;"></div>
+        <div class="main_content">
+            <h1>Link</h1> 
+            <div style="font-size: 6px;"><br></div>
+            <h3>SNS</h3>
+            <div style="text-indent: 10px;">
+                <h2 style="font-size: 20px; padding-left: 10px;"><a href="https://misskey.io/@pc98nt6s28"><img src="https://media.misskeyusercontent.jp/misskey/webpublic-0c66b1ca-b8c0-4eaa-9827-47674f4a1580.png" alt="Misskey.io" width=100px" ></a><br></h2>
+            </div>
+            <br>
+            <h3>メール</h3>
+            <div style="padding-left: 25px;">
+                サイトの不具合・改善点などのフィードバック用に<br>
+                <br>
+                任意のメールアプリ(Outlook、Apple Mailなど)で開く場合は<a href="mailto:yasakure95@gmail.com" class="NTB">こちらから</a><br>
+                Gmail(Web版)で開く場合は<a target="_blank" href="https://mail.google.com/mail/?view=cm&to=yasakure95@gmail.com&su=なんか来たぞ&body=" class="NTB">こちらから</a><br>
+                <br>
+                (以下は上記以外のメールアプリ・サイト用)<br>
+                &#0160; メールアドレスは&#0160;&#0160;  yasakure95@gmail.com  &#0160;&#0160;です。
+            </div>
+        </div>
+        <footer class="copyright">
+            <center>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            (C)opyrights 2023-2024 pentas, All rights reserved.<br>
+        </center>
+        </footer>
+    </body>
+</html>
