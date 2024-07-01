@@ -15,35 +15,16 @@
     <div class="main_content">
         <script>
                 window.location.assign("./ja-JP/index.html");
-            let user_language = window.navigator.language;
-            switch(user_language)
-            {
-                case "ja":
-                if (navigator.userAgent.match(/iPhone|Android.+Mobile/))
-                {
-                  alert("このサイトはモバイル製品に対応していません。\nPC互換モードでご覧ください。");
-                  break;
-                }
-                window.location.assign("./ja-JP/index.html");
-                break;
-                case "ja-JP":
-                if (navigator.userAgent.match(/iPhone|Android.+Mobile/))
-                {
-                  alert("このサイトはモバイル製品に対応していません。\nPC互換モードでご覧ください。");
-                  break;
-                }
-                window.location.assign("./ja-JP/index.html");
-                break;
-                default:   
-                if (navigator.userAgent.match(/iPhone|Android.+Mobile/))
-                {
-                  alert("This site is not compatible with mobile products.\nPlease view in PC compatible mode.");
-                  break;
-                }
-                location.replace("./en-US/index.html");
-                    break;
-            }
             </script>
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F0X321RZN7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F0X321RZN7');
+</script>
             <noscript>
                <h1 style="font-weight: lighter;">JavaScript Error:JavaScript disabled!<br></h1>
                It will not work well.<br><br>
