@@ -4,14 +4,23 @@
     <head>
         <title>開発の裏側とか</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="./style/common.css">
+        <link rel="stylesheet" href="/common/common.css">
+        <link rel="icon" href="/common/icon.ico">
+        <script>
+            fetch("/common/header.html")
+              .then((response) => response.text())
+              .then((data) => document.querySelector("#menu").innerHTML = data);
+            fetch("/common/footer.html")
+              .then((response) => response.text())
+              .then((data) => document.querySelector("#footer").innerHTML = data);
+          </script>
     </head>
     <body id="bd">
-        <div id="header" style="display: inline;"></div>
+        <div id="menu" style="display: inline;"></div>
         <div class="main_content" style="padding-left: 10px;">
             <h1 class="title" style="padding-top: 5px;">サイトのお話</h1>
             <div style="padding-left: 10px;">
-                サイトを作った時のこととか、どうゆうのがアクセスできるのかっていうことをただ書き連ねたページです
+                サイトを作った時のこととか、どうゆうのがアクセスできるのかっていうことをただ書いたページです
             </div>
             <h3 class="title">アクセス可能なOSの要件</h3>
             <div style="padding-left: 10px;">
