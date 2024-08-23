@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="ja-JP">
+    <head>
+        <meta charset="UTF-8">
+        <title>ようこそ</title>
+        <link rel="stylesheet" href="../../../common/common.css">
+        <link rel="icon" href="../../../common/icon.ico">
+        <script>
+            fetch("../../../common/header.html")
+              .then((response) => response.text())
+              .then((data) => document.querySelector("#menu").innerHTML = data);
+            fetch("../../../common/footer.html")
+              .then((response) => response.text())
+              .then((data) => document.querySelector("#footer").innerHTML = data);
+          </script>
+    </head>
+    <body>
+        <div id="menu" style="display: inline;"></div>
+        <div class="main_content">
+            <h1>Blog</h1>
+            <h5><br></h5>
+            <div id="blog">
+                <div id="blog_title">
+                    &nbsp;ブログメニュー
+                </div>
+                <div id="blog_main" style="border-bottom: 1px solid; border-color: rgb(223,223,223);">
+                    PCはこのページではキーを用いて移動ができます。<br>
+                    前のページへはback、上のディレクトリへはup、サイトトップへはtop<br>
+                    8月23日分の記事へは0823 &nbsp;と打てば移動できます。
+                </div>
+                <div id="blog_main" style="background-color: rgb(191, 191, 191);">
+                    ディレクトリツリー<br>
+                    =================<br>
+                    <a href="../index.html">ブログトップ</a><br>
+                    　　　┣━━ <a>2024年</a><br>
+                    　　　┃　　　┗━━ <a href="./08/">8月</a>...<br>
+                </div>
+            </div>
+        </div>
+        <div id="footer" style="display: inline;"></div>
+            <script src="../../../common/cheet.min.js" type="text/javascript"></script>
+            <script>
+                cheet('t o p', function()
+                {
+                    window.location.href = "../../"
+                });
+                cheet('u p', function()
+                {
+                    window.location.href = "../"
+                });
+                cheet('b a c k', function()
+                {
+                    history.back();
+                });
+
+                
+                cheet('0 8', function()
+                {
+                    window.location.href = "./08/"
+                });
+                cheet('0 9', function()
+                {
+                    window.location.href = "./09/"
+                });
+                cheet('1 0', function()
+                {
+                    window.location.href = "./10/"
+                });
+                cheet('1 1', function()
+                {
+                    window.location.href = "./11/"
+                });
+                cheet('1 2', function()
+                {
+                    window.location.href = "./12/"
+                });
+            </Script>
+        </div>
+    </body>
+</html>
