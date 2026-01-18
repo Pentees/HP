@@ -7,36 +7,22 @@
                 border: 0px;
             }
             
-            a:link.NTL
+            a
             {
-                color: rgb(0,192,192);
-                background-color: transparent;
+                color: rgb(169,192,226);
                 text-decoration: none;
             }
-            a:link.NTB
-            {
-                color: rgb(0,192,192);
-                background-color: transparent;
-                text-decoration: none;
-            }
-            a:visited.NTL
-            {
-                 color : rgb(192,31,192);
-            } 
-            a:visited.NTB
-            {
-                 color : rgb(32,191,191);
-            } 
-            a:active.NTL
-            {
-                 color : #ff7043;
-            } 
             
+            a:visited
+            {
+                color : rgb(192,128,192);
+                text-decoration: wavy;
+            }
+
             body
             {
                 color: rgb(200, 200, 200);
                 background-color: rgb(64,144,144); 
-                font-family: 'Site Font';
             }
 
             header
@@ -86,7 +72,7 @@
 
             #menu li a:hover:not(.active)
             {
-	            background-color: #a9bce2;
+	            background-color: #a9c0e2;
             }
 
             #main_content
