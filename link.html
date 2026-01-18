@@ -2,43 +2,52 @@
 
 <html lang="ja-JP">
     <head>
-        <title>Link</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="../common/common.css">
-        <link rel="icon" href="../common/icon.ico">
+        <title>Link</title>
+        <link rel="stylesheet" href="./resource/common.css">
+        <link rel="icon" href="./resource/favicon.png">
         <script>
-            fetch("../common/header.html")
+            fetch("./resource/header.html")
               .then((response) => response.text())
               .then((data) => document.querySelector("#menu").innerHTML = data);
-            fetch("../common/footer.html")
+            fetch("./resource/footer.html")
               .then((response) => response.text())
               .then((data) => document.querySelector("#footer").innerHTML = data);
-          </script>
+        </script>
+        <style>
+            a#link
+            {
+                background-color: aquamarine;
+                border: solid 1px grey;
+                border-bottom: 2px grey;
+                border-top: 0px;
+                margin-bottom: 3px gainsboro;
+            }
+        </style>
     </head>
     <body>
         <div id="menu" style="display: inline;"></div>
-        <div class="main_content">
+        <div class="main_content" style="padding-left: 20px; padding-top: 20px; ">
             <h1>Link</h1> 
-            <div style="font-size: 6px;"><br></div>
-            <h3>SNS(グローバル)</h3>
-            <div style="text-indent: 10px;">
-                <h2 style="font-size: 20px; padding-left: 10px;"><a href="https://x.com/mc223s9">イーロンのおもちゃ(X/Twitter)</a><br></h2>
-            </div>
-            <br>
-            <h3>メール</h3>
-            いろいろ持ってますが、2つ乗せときます
-            <h4>Hotmail: pentas9516@Hotmail.com</h4>
-            <h4>Gmail: 5ermxt98@gmail.com</h4>
-            <br>
-            <h3>身内向けに連絡</h3>
-            大災害起きたら171に電話かけるんやで(公衆電話からかけるとなおよし)<br>
-            電話番号知らないとかあったらDMなりLINEなりで聞いて、どうぞ<br>
-            「津波てんでんこ」、「自助、共助、公助」はしっかり守るんやで<br>
-            <br>
-            <div style="padding-left: 1em; font-size: 18px;">
-                サイトの不具合はXのDMかメールアドレスまで<br>
+            <div style="padding-left: 20px;">
+                <h3>SNS</h3>
+                <div style="padding-left: 15px;">
+                    <h2 style="font-size: 20px; font-weight: 100;">
+                        <a href="https://x.com/pptx2061">X(旧:Twitter)</a><br>
+                    </h2>
+                    Xって1文字だからタッチとかクリックのできる範囲クソ小さいから嫌い<br>
+                    サイトの不具合はXのDMまで<br>
+                </div>
+                <div style="padding-left: 15px;">
+                    <h2 style="font-size: 20px; font-weight: 100;">
+                        <a href="https://bsky.app/profile/pptx2061.bsky.social">Bluesky</a><br>
+                    </h2>
+                    仮移住中<br>
+                    実は結構前から持ってたのに放置してた
+                    <br>
+                </div>
             </div>
         </div>
-        <div id="footer" style="display: inline;"></div>
+        <div id="footer" style="display: inline;"> </div>
     </body>
 </html>

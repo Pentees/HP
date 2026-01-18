@@ -2,33 +2,42 @@
 
 <html lang="ja-JP">
     <head>
-        <title>メニュー</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="../common/common.css">
-        <link rel="icon" href="../common/icon.ico">
+        <title>おしながき</title>
+        <link rel="stylesheet" href="./resource/common.css">
+        <link rel="icon" href="./resource/favicon.png">
         <script>
-            fetch("../common/header.html")
+            fetch("./resource/header.html")
               .then((response) => response.text())
               .then((data) => document.querySelector("#menu").innerHTML = data);
-            fetch("../common/footer.html")
+            fetch("./resource/footer.html")
               .then((response) => response.text())
               .then((data) => document.querySelector("#footer").innerHTML = data);
-          </script>
+        </script>
+        <style>
+            a#menu
+            {
+                background-color: aquamarine;
+                border: solid 1px grey;
+                border-top: 0px;
+                margin-bottom: 3px gainsboro;
+            }
+        </style>
     </head>
     <body>
         <div id="menu" style="display: inline;"></div>
-        <div id="main">
+        <div style="padding-left: 20px; padding-top: 20px;">
             <h1>
                 Menu
             </h1>
-            <h5><br></h5>
-            一応のサイトマップです
-            <ul style="list-style: none; padding-left: 10px;">
-                <li><a href="./index.html">TOPページ</a></li>
-                <li><a href="./build.html">サイトのバージョン情報</a></li>
-                <li><a href="./detail.html">サイト主の細かな情報</a></li>
-                <li><a href="./Blog/index.html">日記(?)</a></li>
-            </ul>
+            <div style="padding-left: 15px; padding-top: 15px;">
+            
+                <a href="./index.html">TOPページ</a><br>
+                ┗━<a href="./detail.html">中の人はこんな人</a><br>
+                <a href="./build.html">サイトの更新情報</a><br>
+                ┗━<a href="./log.html">やったことの記録</a><br>
+            
+            </div>
         </div>
         <div id="footer" style="display: inline;"></div>
     </body>

@@ -1,0 +1,180 @@
+            *
+            {
+                top: 0;
+                left: 0;
+                margin: 0px;
+                padding: 0px;
+                border: 0px;
+            }
+            
+            a:link.NTL
+            {
+                color: rgb(0,192,192);
+                background-color: transparent;
+                text-decoration: none;
+            }
+            a:link.NTB
+            {
+                color: rgb(0,192,192);
+                background-color: transparent;
+                text-decoration: none;
+            }
+            a:visited.NTL
+            {
+                 color : rgb(192,31,192);
+            } 
+            a:visited.NTB
+            {
+                 color : rgb(32,191,191);
+            } 
+            a:active.NTL
+            {
+                 color : #ff7043;
+            } 
+            
+            body
+            {
+                color: rgb(200, 200, 200);
+                background-color: rgb(64,144,144); 
+                font-family: 'Site Font';
+            }
+
+            header
+            {
+                color: white;
+            }
+
+            footer
+            {
+                margin-left:15px;
+                text-align: center;
+            }
+
+            h1
+            {
+                font-weight:unset;
+            }
+
+            #menu ul
+            {
+                color: aliceblue;
+                height: 50px;
+                top: 0;
+                left: 0;
+                list-style-type:disc;
+                margin: 0px;
+                background-color: rgb(192,192,192);
+                border-bottom: 2px solid;
+                border-color: rgb(211,211,211);
+            }
+
+            #menu li
+            {
+                list-style: none;
+	            float: left;
+	            border-right: 1px solid #bbbbbb;
+	            border-left: 1px solid #bbbbbb;
+            }
+            #menu li a
+            {
+	            display: block;
+        	    color: black;
+	            text-align: center;
+    	        padding: 14px 16px;
+	            text-decoration: none;
+            }
+
+            #menu li a:hover:not(.active)
+            {
+	            background-color: #a9bce2;
+            }
+
+            #main_content
+            {
+                padding-top: 15px;
+                padding-left: 30px;
+            }
+
+            #main div
+            {
+                font-weight: 100;
+                padding-left: 10px;
+            }
+
+            #hidden_text
+            {   
+                color: rgb(64, 144, 144);
+            }
+
+            .TABLE_Normal table th td tr
+            {
+                border: 10px solid rgb(0, 0, 0);
+            }
+
+            .win_table
+            {
+                color: black;
+                background-color: aqua;
+                border: 2px solid rgb(200, 200, 200);
+                border-collapse: collapse;
+                width: 600px;
+            }
+            .win_table th
+            {
+                font-weight: 100;
+                color: rgb(225,225,225);
+                background-color:  blue;
+            }
+            .win_table td
+	        {
+                padding-left: 3px;
+                border-left: 1px solid gray;
+                border-right: 1px solid gray;
+	        }
+            
+            .blog
+            {
+                position: absolute; 
+                left: 50%;
+                transform: translateX(-50%);
+                -webkit-transform: translateX(-50%);
+                -ms-transform: translateX(-50%);
+                width: 600px;
+                background-color: rgb(175, 175, 175);
+            }
+            .blog_title
+            {
+                border: solid,thin;
+                border-color: rgb(175, 175, 175);
+                color: rgb(225,225,225);
+                font-size: 15px;
+                background-color: blue;
+                list-style-position: center;
+                display: flex;
+                justify-content: space-between;
+            }
+            
+            .blog_main
+            {
+                border: solid,thin;
+                border-color: rgb(211, 211, 211);
+                color: black;
+                font-size: 15px;
+                list-style-position: center;
+                display: flex;
+                justify-content: space-between;
+            }
+            .title_left
+            {
+                margin-left: 10px;
+                text-align: center;
+            }
+            .title_right
+            {
+                margin-right: 15px;
+                text-align: center;
+            }
+            .copyright
+            {
+                text-align: center;
+            }
