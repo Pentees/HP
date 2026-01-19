@@ -4,13 +4,23 @@
     <head>
         <meta charset="UTF-8">
         <title>おしながき</title>
-        <link rel="stylesheet" href="./resource/common.css">
-        <link rel="icon" href="./resource/favicon.png">
+        <link rel="icon" href="/HP/resource/favicon.png">
+        <link rel="stylesheet" href="/HP/resource/common.css">
+        <div>
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-F0X321RZN7"></script>
+          <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-F0X321RZN7');
+              console.log("A")
+          </script>
+        </div>
         <script>
-            fetch("./resource/header.html")
+            fetch("/HP/resource/header.html")
               .then((response) => response.text())
               .then((data) => document.querySelector("#menu").innerHTML = data);
-            fetch("./resource/footer.html")
+            fetch("/HP/resource/footer.html")
               .then((response) => response.text())
               .then((data) => document.querySelector("#footer").innerHTML = data);
         </script>
@@ -26,7 +36,7 @@
     </head>
     <body>
         <div id="menu" style="display: inline;"></div>
-        <div style="padding-left: 20px; padding-top: 20px;">
+        <div id="main_content">
             <h1>
                 Menu
             </h1>

@@ -4,9 +4,19 @@
     <head>
         <meta charset="UTF-8">
         <title>中の人の紹介</title>
+        <link rel="icon" href="./resource/favicon.png">
         <link rel="stylesheet" href="./resource/common.css">
         <link rel="stylesheet" href="./resource/menu_sub.css">
-        <link rel="icon" href="./resource/favicon.png">
+        <div>
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-F0X321RZN7"></script>
+          <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-F0X321RZN7');
+              console.log("A")
+          </script>
+        </div>
         <script>
             fetch("./resource/header.html")
               .then((response) => response.text())
@@ -40,7 +50,7 @@
                 <li><a class="menu_sub" id="about_me" href="./detail.html">中の人</a></li>
             </ul>
         </div>
-        <div class="main_content"  style="padding-left: 20px; padding-top: 20px;">
+        <div id="main_content">
             <h1 style="font-weight: 200;">中の人はこんな人</h1>
             <div style="margin-left: 10px;">
                 男子高校生、彼女いない歴=年齢<br>

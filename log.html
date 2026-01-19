@@ -6,6 +6,16 @@
         <link rel="stylesheet" href="./resource/common.css">
         <link rel="stylesheet" href="./resource/menu_sub.css">
         <link rel="icon" href="./resource/favicon.png">
+        <div>
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-F0X321RZN7"></script>
+          <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-F0X321RZN7');
+              console.log("A")
+          </script>
+        </div>
         <script>
             fetch("./resource/header.html")
                 .then((response) => response.text())
@@ -47,6 +57,14 @@
                 最終更新日 2026.1.18<br>
                 <br>
                 <p>
+                    26.1.19<br>
+                    <div style="padding-left: 10px;">
+                        バージョンは2.1.2601<br>
+                        Google Analyticsを導入(全ページ)<br>
+                        ページごとに少しずつ違っていたレイアウトを統一<br>
+                    </div>
+                </p>
+                <p>
                     26.1.18<br>
                     <div style="padding-left: 10px;">
                         久々の更新、バージョンは2.0.2601<br>
@@ -57,7 +75,6 @@
                 </p>
             </div>
         </div>
-        
         <div id="footer" style="display: inline;"></div>
     </body>
 </html>
