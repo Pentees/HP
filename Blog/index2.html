@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html lang="ja-JP">
+    <head>
+        <title>魔境へようこそ</title>
+        <link rel="stylesheet" href="/HP/resource/common.css">
+        <link rel="icon" href="/HP/resource/favicon.png">
+        <link rel="stylesheet" href="resource/menu_sub.css">
+        <script src="resource/fetch.js"></script>
+        <script src="resource/time_zone.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@latest"></script>
+        <style>
+            a#blog
+            {
+                background-color: aquamarine;
+                border: solid 1px grey;
+                border-top: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="menu" style="display: inline;"></div>
+        <div id="menu_sub" style="display: inline;"></div>
+        <div id="main_content">
+            <h1>魔境へようこそ</h1>
+            <div style="padding-top: 10px; padding-left: 10px;" id="main">
+                日本語へたくそが書く超雑な日記<br>
+                ただし、内容は政治的なものや強めの思想を多く含む<br>
+                <br>
+                <supabase-client>
+                    <div style="padding-left: 10px;" id="latest1"></div>
+                    <div style="padding-left: 10px;" id="latest2"></div>
+                    <div style="padding-left: 10px;" id="latest3"></div>
+                    <div style="padding-left: 10px;" id="latest4"></div>
+                    <div style="padding-left: 10px;" id="latest5"></div>
+                    <div style="padding-left: 10px;" id="latest6"></div>
+                    <div style="padding-left: 10px;" id="latest7"></div>
+                    <div style="padding-left: 10px;" id="latest8"></div>
+                    <div style="padding-left: 10px;" id="latest9"></div>
+                    <div style="padding-left: 10px;" id="latest10"></div>
+                </supabase-client>
+                <br>
+            </div>
+        </div>
+        <div id="footer" style="display: inline;"></div>
+    </body>
+    <script src="resource/time_zone.js"></script>
+    <script>
+        Client = supabase.createClient("https://pnphgrrdxktvklvvttgy.supabase.co", "sb_publishable_Pzfhf6ual5l3CMxwESMEbg_h1CxdoeU");
+
+        async function set_Base(set_Contents)
+        {
+            n = 0;
+            for(i = 0; i < set_Contents.length; i++)
+            {
+                content_list = []
+                caution = "";
+                tag = "";
+                console.log(set_Contents[i])
+                if (set_Contents[i][5] != "")
+                {
+                    if (tag.length == 0)
+                    {
+                        tag += "<br>"
+                    }
+                    if(set_Contents[i][5].indexOf(", ") != -1)
+                    {
+                        query_D = ", "
+                        position_P = 0
+                        while(set_Contents[i][5].indexOf(query_D, position_P) != -1)
+                        {
+                            position = set_Contents[i][5].indexOf(query_D, position_P) + query_D.length
+                            console.log(set_Contents[i][5].slice(position_P, position - query_D.length))
+                            tag += "#"+ set_Contents[i][5].slice(position_P, position - query_D.length) +" ";
+                            position_P = position
+                        }
+                        console.log(set_Contents[i][5].slice(position_P, position - query_D.length))
+                        if(set_Contents[i][5].slice(position).length != 0)
+                        {
+                            tag += "#"+ set_Contents[i][5].slice(position) +" ";
+                        }
+                    }
+                    else
+                    {
+                        tag += "#"+ set_Contents[i][5].slice(0) +" "; 
+                    }
+                }
+                if (set_Contents[i][6] != "ja-JP")
+                {
+                    caution += "<br><span style=\"color:orange\">日本語ではない言語での記事です！</span>";
+                }
+                if (set_Contents[i][4])
+                {
+                    caution += "<br><span style=\"color:orange\">※国際・政治的事情を含む内容です！</span>";
+                }
+                time_Local = Conv_UTC(set_Contents[i][1])
+                target_id = 'latest' + (i + 1)
+                document.getElementById(target_id).innerHTML = "<a href=\"/HP/Blog/read.html?id=" + set_Contents[i][0] +"\">" + set_Contents[i][2] + "</a><br>(" + time_Local + ")" + tag + caution + "<br><br>"
+            }
+            return 
+        }
+        
+        async function main()
+        {
+            var html_replace = []
+            var response = await Client.from("Titles").select('*, Articles(title )').order('created_at', { ascending: false }).limit(10)
+            var env_res = await fetch("/HP/resource/resource.json")
+            response = await response["data"]
+            console.info(await response)
+            const env = await env_res.json()
+            for (i = 0; i < await response.length;i++)
+            {
+                if(response[i]["Articles"]["title"] == "")
+                {
+                    title = env["ja-JP"]["untitled"]
+                }
+                else
+                {
+                    title = response[i]["Articles"]["title"]
+                }
+                html_replace.push([response[i]["id"], response[i]["created_at"], title, response[i]["Flag_Hidden"], response[i]["Flag_Political"], response[i]["Flag_Optional"], response[i]["language"], response[i]["Article_URL"]])
+            }
+            set_Base(html_replace)
+        }
+        
+        main()
+    </script>
+</html>
