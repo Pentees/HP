@@ -1,0 +1,28 @@
+{
+    "language" : ["ja-JP", "en-US"],
+    "ja-JP":
+    {
+        "untitled" : "無題",
+        "untexted" : "...内容がないですね、これじゃあ私の人生じゃないですかﾔﾀﾞｰ",
+        "caution" : "注意",
+        "political_notice" : "国際的もしくは政治的なきつめの発言が含まれます！",
+        "other_language_notice" : "この記事は日本語以外で書かれています！"
+    },
+    "en-US" : 
+    {
+        "untitled" : "Empty Str",
+        "untexted" : "There is no content.",
+        "caution" : "Caution",
+        "political_notice" : "This article contains POLITICALLY or INTERNATIONALLY SENSITIVE subjects!",
+        "other_language_notice" : "This article not written in English, use translator."
+    },
+    "def" : 
+    {
+        "ja" : "ja-JP",
+        "en" : "en-US",
+        "zh" : "zh-TW",
+        "ko" : "ko-KR",
+        "th" : "th-TH"
+    },
+    "Others" : "en-US"
+}
