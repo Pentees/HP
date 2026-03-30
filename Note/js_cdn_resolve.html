@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="ja-JP">
+    <head>
+        <title>CDNとJavascript</title>
+        <link rel="stylesheet" href="resource/common.css">
+        <link rel="icon" href="resource/favicon.png">
+        <link rel="stylesheet" href="resource/menu_sub.css">
+        <script src="resource/fetch.js"></script>
+        <style>
+            a#menu
+            {
+                background-color: aqua;
+                border: solid 1px grey;
+                border-top: 0px;
+            }
+
+            .char
+            {
+                width: 300px;
+                text-align: center;
+                border: 2px solid aliceblue;
+                border-collapse: collapse;
+                background-color: silver;
+                color: black;
+
+            } 
+
+            td
+            {
+                border: 1px solid aliceblue;
+            }
+        </style>
+    </head>
+    <body style="white-space: nowrap;">
+        <div id="menu" style="display: inline;"></div>
+        <div id="menu_sub" style="display: inline;"></div>
+        <div id="main_content">
+            <h1>CDNとJavascript</h1>
+            <div style="padding-top: 10px; padding-left: 10px; overflow-wrap: break-word;">
+                Blogのページを作った時の話を記述する欄<br>
+                <br>
+                くっそ疲れました！<br>
+                作り方が分かればおそらく1週間くらいで作れそうなことに2ヶ月費やしました！このおバカ！<br>
+                <s>そもそもこんな辺境に来てくれる人はいるのか怪しいですが...</s>私の失態を見てくださると幸いです<br>
+                <br>
+                データベースを扱ってみたいなで作ったのがBlog機能です<br>
+                データベースには<a href="https://supabase.com">Supabase</a>を使い、他はすべてここで処理できるようにと考えていました。<br>
+                とりあえずデータの読み出しさえできればここで表示する分には申し分ないので<br>
+                そこだけ作ろうと思って<a href="https://supabase.com/docs/reference/javascript/">公式ドキュメント</a>から<s>パクって</s>持ってきて作ったのが以下のコード<br>
+<pre>
+    &lt;html&gt;
+        ...
+        &lt;script src="https://unpkg.com/@supabase/supabase-js@2"&gt;&lt;/script&gt;
+        &lt;script&gt;
+            import {createClient} from '@supabase/supabase-js@2'
+            Client = supabase.createClient("https://****.supabase.co", "sb_publishable_*****");
+        &lt;/script&gt;
+        ...
+    &lt;/html&gt;
+</pre>
+                しかし、import ...の行で外部からインポートできません的なエラーが吐かれます<br>
+                Google君に聞いてみたところmoduleを付けると大丈夫と言われたのでそう書き変えました。<br>
+                しかし、CDNのものにmoduleタグをつけてもダメです<br>
+                んで、Pythonを使ったAPI Serverを建ててそこを介する処理にしようとしましたが、面倒くさくってやめました。(この間2週間)<br>
+                そして、ネットの海をさまよっていると、こんなものを発見<br>
+<pre>
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@latest"&gt;&lt;/script&gt;
+&lt;/head&gt;
+...
+&lt;script&gt;
+class SupabaseClientComponent extends HTMLElement {
+    constructor() {
+        super();
+        this.supabaseUrl = '';
+        this.supabaseKey = ''; 
+        this.supabase = null;
+    }
+
+    connectedCallback() {
+        this.initializeSupabase();
+    }
+
+    initializeSupabase() {
+        this.supabase = supabase.createClient(this.supabaseUrl, this.supabaseKey);
+        console.log('Supabase client has been initialized:', this.supabase);
+        // Now you can use this.supabase to make requests to your Supabase project.
+    }
+}
+
+// Define the new element
+customElements.define('supabase-client', SupabaseClientComponent);
+
+&lt;/script&gt;
+&lt;/html&gt;
+
+<a href="https://github.com/supabase/supabase/issues/21261#issuecomment-1946066213">https://github.com/supabase/supabase/issues/21261#issuecomment-1946066213</a>より
+
+</pre>
+                importはいらない子だったということです。ありがとう海外ニキ。<br>
+                CDNインストール(scriptタグを使う、Web向け)を行うのならばimportを使わないように！<br>
+                公式ドキュメントから何も考えずにコピペしてくると必ずブチ当たる間違いだと思います、気を付けてください！<br>
+                ここさえ乗り越えたらあとは公式ドキュメントを使って何でもできます、つまり無敵です
+            </div>
+        </div>
+        <div id="footer" style="display: inline;"></div>
+    </body>
+</html>
