@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="ja-JP">
+    <head>
+        <title>HTML書式のやつ</title>
+        <link rel="stylesheet" href="resource/common.css">
+        <link rel="stylesheet" href="resource/menu_sub.css">
+        <link rel="icon" href="resource/favicon.png">
+        <script src="resource/fetch.js"></script>
+        <style>
+            a#menu
+            {
+                background-color: aqua;
+                border: solid 1px grey;
+                border-top: 0px;
+            }
+
+            a#note_HTML
+            {
+                background-color: aquamarine;
+                border: solid 1px grey;
+                border-top: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="menu" style="display: inline;"></div>
+        <div id="menu_sub" style="display: inline;"></div>
+        <div id="main_content">
+            <h1>HTML、CSSのもの</h1>
+            <div style="padding-top: 10px; padding-left: 10px;">
+                <br>
+                <h2 style="font-weight: 100;">Table関係</h2>
+                <div style="padding-left: 10px;">
+                    全然扱わないから、新しく作るときに忘れがち<br>
+                    タグの上位順からtable＞tr(row)＞th(header)＞td(data)<br>
+                    th、tdのborderの結合はborder-collapseでcollapseを選択、sepalateは標準状態
+                </div>
+                <br>
+                <h2 style="font-weight: 100;">文字装飾系</h2>    
+                <div style="padding-left: 10px;">
+                    Wordにあるショートカットにないヤツ中心<br>
+                    打ち消し線(Strike-Through)<br>
+                    正式名称長すぎ<br>
+                    htmlのみでの実装：sタグ、deleteタグ、strikeタブ(HTML5で非推奨化)<br>
+                    cssでの実装：text-decorationでline-throughを選択<br>
+                    <br>
+                </div>
+                <br>
+            </div>
+        </div>
+        <div id="footer" style="display: inline;"></div>
+    </body>
+</html>
