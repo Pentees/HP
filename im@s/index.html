@@ -4,7 +4,7 @@
     <head>
         <title>a</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/HP/imas/resource/style.css">
+        <link rel="stylesheet" href="/HP/im@s/resource/style.css">
     </head>
     <body>
         <select name="language" id="lang" onchange="lang_change()"></select><br>
@@ -134,8 +134,8 @@
 
         async function main()
         {
-            const res_lang = await fetch("/HP/imas/resource/lang.json")
-            const res_ids = await fetch("/HP/imas/resource/game_id.json")
+            const res_lang = await fetch("/HP/im@s/resource/lang.json")
+            const res_ids = await fetch("/HP/im@s/resource/game_id.json")
             const lang_json = await res_lang.json()
             const ids = await res_ids.json()
             console.log(ids)
@@ -171,8 +171,8 @@
 
         async function copyid(game_name)
         {
-            const res_ids = await fetch("/HP/imas/resource/game_id.json")
-            const res_lang = await fetch("/HP/imas/resource/lang.json")
+            const res_ids = await fetch("/HP/im@s/resource/game_id.json")
+            const res_lang = await fetch("/HP/im@s/resource/lang.json")
             const ids = await res_ids.json()
             const lang_json = await res_lang.json()
             game_json_name = await ids["defines"][game_name]
@@ -195,8 +195,8 @@
         async function lang_change()
         {
             const lang = document.getElementById("lang").value
-            const res = await fetch("/HP/imas/resource/lang.json")
-            const res_ids = await fetch("/HP/imas/resource/game_id.json")
+            const res = await fetch("/HP/im@s/resource/lang.json")
+            const res_ids = await fetch("/HP/im@s/resource/game_id.json")
             const resource = await res.json()
             const ids = await res_ids.json()
             console.log(resource)
