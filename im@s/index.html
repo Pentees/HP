@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>a</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/HP/imas/resource/style.css">
+    </head>
+    <body>
+        <select name="language" id="lang" onchange="lang_change()"></select><br>
+        <h3 id="title"></div>
+        <h3 class="index" id="game_ids_index">Game IDs</h3>
+        <div id="Game_ID">
+            <div class="hover-card" id="CGSS" style="color: rgb(38,129,200); background: linear-gradient(90deg,rgba(38,129,200, 0.2), rgba(38,129,200, 0.5));">
+                <h3 id="CGSS_name">
+                    デレステ
+                </h3>
+                <div id="CGSS_id">
+                    ID: XXXXXXXXX
+                </div>
+                <div id="Copy_CGSS">
+                    カードをタップしてIDをコピー
+                </div>
+            </div>
+            <div id="MLTD" class="hover-card" style="color: rgb(255,192,11); background: linear-gradient(90deg,rgba(228, 210, 156, 0.2), rgba(255,192,11, 0.5));">
+                <h3 id="MLTD_name">
+                    ミリシタ
+                </h3>
+                <div id="MLTD_id">
+                    ID: XXXXXXXX
+                </div>
+                <div id="Copy_MLTD">
+                    カードをタップしてIDをコピー
+                </div>
+            </div>
+            <div id="SCSP" class="hover-card" style="color:rgb(141, 187, 255); background: linear-gradient(90deg,rgba(228, 210, 156, 0.2), rgba(141, 187, 255, 0.5));">
+                <h3 id="SCSP_name">
+                    シャニソン
+                </h3>
+                <div id="SCSP_id">
+                    ID: XXXXXXXXX
+                </div>
+                <div id="Copy_SCSP">
+                    カードをタップしてIDをコピー
+                </div>
+            </div>
+            <div id="GK" class="hover-card" style="color: rgb(243, 152, 0); background: linear-gradient(90deg,rgba(243, 152, 0, 0.2), rgba(243, 152, 0, 0.5));">
+                <h3 id="GK_name">
+                    学マス
+                </h3>
+                <div id="GK_id">
+                    ID: XXXXXXXX
+                </div>
+                <div id="Copy_GK">
+                    カードをタップしてIDをコピー
+                </div>
+            </div>
+        </div>
+        <h3 class="index">HP</h3>
+            <div class="SNS-card">
+                <div class="img_SNS-card">
+                    <img src="/HP/resource/favicon.png" style="width: 100%; height: 100%;">
+                </div>
+                <div class="card_main">
+                    <h3><a id="HP" href="https://pentees.github.io/HP/">HP(Github)</a></h3>
+                    <p id="describe_HP">ここ以上に簡素な造りのHP、超低クオ、スマホ非対応</p>
+                </div>
+            </div>
+        <h3 class="index">SNS</h3>
+        <div id="SNS">
+            <div class="SNS-card">
+                <div class="img_SNS-card">
+                    <img src="/HP/imas/resource/X_logo-black.png" style="width: 100%; height: 100%;">
+                </div>
+                <div class="card_main">
+                    <h3><a id="Twitter" href="https://x.com/pptx2061">Twitter</a></h3>
+                    <p id="describe_Twitter">主に出現する場所</p>
+                </div>
+            </div>
+            <div class="SNS-card">
+                <div class="img_SNS-card">
+                    <img src="/HP/imas/resource/bluesky_logo.png" style="width: 100%; height: 100%;">
+                </div>
+                <div class="card_main">
+                    <h3><a id="BlueSky" href="https://bsky.app/profile/pptx2061.bsky.social">BlueSky</a></h3>
+                    <p id="describe_BlueSky">Twitterに入れないときに使用</p>
+                </div>
+            </div>
+        </div>
+        <div id="footer" style="text-align: center;">
+           Copytights 2026 ノブP/pptx2061<br>
+           今の時代に手書きって結構バカなのでは...？
+        </div>
+    </body>
+    <script>
+        function clock_JST()
+        {
+            let nowTime = new Date();
+            let nowMonth  = nowTime.getMonth() + 1;
+            let nowDate  = nowTime.getDate();
+            let nowHour = nowTime.getHours() + (9 + Math.floor(nowTime.getTimezoneOffset()/60));
+            let nowMin  = nowTime.getMinutes() + nowTime.getTimezoneOffset() % 60;
+            let nowSec  = nowTime.getSeconds();
+            nowMin = nowMin.toString().padStart(2,"0")
+            nowSec = nowSec.toString().padStart(2,"0")
+            let msg = nowMonth + "/" + nowDate + " " + nowHour + ":" + nowMin + ":" + nowSec + " now (JST)";
+            document.getElementById("JST").innerHTML = msg;
+        }
+        //setInterval(clock_JST,1000);
+    </script>
+    <script>
+        const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time));
+
+        console.info(navigator)
+
+        function isSmartPhone()
+        {
+            if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        const isTouchable = "ontouchstart" in window || (window.DocumentTouch && document instanceof DocumentTouch);
+        var event_touch_click = null
+        if(isTouchable)
+        {
+            event_touch_click = "touchend"
+        }
+        else
+        {
+            event_touch_click = "click"
+        }
+
+        async function main()
+        {
+            const res_lang = await fetch("/HP/imas/resource/lang.json")
+            const res_ids = await fetch("/HP/imas/resource/game_id.json")
+            const lang_json = await res_lang.json()
+            const ids = await res_ids.json()
+            console.log(ids)
+            var options
+            for(i = 0; i < lang_json["language"].length; i++)
+            {
+                console.info(lang_json["language"][i], lang_json["name"][i])
+                options += "<option value=" + lang_json["language"][i] + ">" + lang_json["name"][i] + "</option>"
+            }
+            document.getElementById("lang").innerHTML = options
+            const defaults = lang_json["language"][0]
+            for(i = 0;i < await ids["elements"].length;i++)
+            {
+                console.info(await lang_json[defaults]["Game_Name"][ids["elements"][i]])
+                var game_name_id = await ids["elements"][i]
+                console.log(game_name_id)
+                document.getElementById(ids["elements"][i] + "_name").innerHTML = await lang_json[defaults]["Game_Name"][ids["elements"][i]]
+                document.getElementById(ids["elements"][i] + "_id").innerHTML = "ID: " + ids[ids["defines"][game_name_id]]
+                
+                document.getElementById("title").innerHTML = lang_json[defaults]["name"]
+
+                if(isSmartPhone() == true)
+                {
+                    document.getElementById("Copy_"+ids["elements"][i]).innerHTML = await lang_json[defaults]["Tap_to_Copy"]
+                }
+                else
+                {
+                    document.getElementById("Copy_"+ids["elements"][i]).innerHTML = await lang_json[defaults]["Click_to_Copy"]
+                }
+            }
+            document.title = await lang_json[defaults]["title_prefics"] + await lang_json[defaults]["name"] + await lang_json[defaults]["title_sufics"]
+        }
+
+        async function copyid(game_name)
+        {
+            const res_ids = await fetch("/HP/imas/resource/game_id.json")
+            const res_lang = await fetch("/HP/imas/resource/lang.json")
+            const ids = await res_ids.json()
+            const lang_json = await res_lang.json()
+            game_json_name = await ids["defines"][game_name]
+            game_id = await ids[game_json_name]
+            const lang = document.getElementById("lang").value
+            console.log(await ids[game_json_name])
+            navigator.clipboard.writeText(await ids[game_json_name])
+            document.getElementById("Copy_"+game_name).innerHTML = await lang_json[lang]["Copy_Success"]
+            await sleep(1500)
+            if(isSmartPhone() == true)
+            {
+                document.getElementById("Copy_"+game_name).innerHTML = await lang_json[lang]["Tap_to_Copy"]
+            }
+            else
+            {
+                document.getElementById("Copy_"+game_name).innerHTML = await lang_json[lang]["Click_to_Copy"]
+            }
+        }
+
+        async function lang_change()
+        {
+            const lang = document.getElementById("lang").value
+            const res = await fetch("/HP/imas/resource/lang.json")
+            const res_ids = await fetch("/HP/imas/resource/game_id.json")
+            const resource = await res.json()
+            const ids = await res_ids.json()
+            console.log(resource)
+            console.log(ids)
+            for(i = 0;i < await ids["elements"].length;i++)
+            {
+                var game_name = await ids["elements"][i]
+                if(isSmartPhone() == true)
+                {
+                    document.getElementById("Copy_"+game_name).innerHTML = await resource[lang]["Tap_to_Copy"]
+                }
+                else
+                {
+                    document.getElementById("Copy_"+game_name).innerHTML = await resource[lang]["Click_to_Copy"]
+                }
+                document.getElementById(game_name+"_name").innerHTML = await resource[lang]["Game_Name"][game_name]
+            }
+            for(i = 0;i < await resource["SNS"].length;i++)
+            {
+                console.log(await resource["SNS"][i], await resource[lang]["SNS_Name"][resource["SNS"][i]])
+                console.log("describe_"+resource["SNS"][i], await resource[lang]["SNS_describe"][resource["SNS"][i]])
+                document.getElementById("describe_"+resource["SNS"][i]).innerHTML = await resource[lang]["SNS_describe"][resource["SNS"][i]]
+                document.getElementById(resource["SNS"][i]).innerHTML = await resource[lang]["SNS_Name"][await resource["SNS"][i]]
+            }
+            document.getElementById("game_ids_index").innerHTML = await resource[lang]["game_ids"]
+            document.getElementById("game_ids_index").innerHTML = await resource[lang]["name"]
+            document.title = await resource[lang]["title_prefics"] + await resource[lang]["name"] + await resource[lang]["title_sufics"]
+        }
+
+        main()
+        console.log(event_touch_click)
+        document.querySelector("#CGSS").addEventListener(event_touch_click, () =>
+        {
+            copyid('CGSS')         
+        });
+        document.querySelector("#MLTD").addEventListener(event_touch_click, () =>
+        {
+            copyid('MLTD')         
+        });
+        document.querySelector("#SCSP").addEventListener(event_touch_click, () =>
+        {
+            copyid('SCSP')         
+        });
+        document.querySelector("#GK").addEventListener(event_touch_click, () =>
+        {
+            copyid('GK')         
+        });
+    </script>
+</html>
