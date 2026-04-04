@@ -1,0 +1,151 @@
+    *
+    {
+        padding: 0;
+        margin: 0;
+        border: 0;
+    }
+
+    .MB
+    {
+        display: none;
+    }
+    
+    .PC
+    {
+        display: flex;
+    }
+
+    select
+    {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 1.5%;
+        vertical-align: middle;
+        text-align:center;
+    }
+
+    .Game_ID
+    {
+        align-items: center;
+        text-align: center;
+    }
+
+    .SNS-card, .hover-card
+    {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 500px;
+        min-width: 250px;
+        padding: 10px;
+        margin: 30px auto;
+        border-radius: 12px;
+        background-color: rgba(0, 0, 1, 0.1);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow-x: hidden;
+        text-align: left;
+    }
+
+    img.SNS-card
+    {
+        align-items: flex-start;
+        flex:1 1 0%
+    }
+
+    .SNS-card
+    {
+        display: flex;
+        background-color: rgba(0, 127, 127, 0.05);
+        border-color: rgba(127, 0, 0, 0.05);
+        height: 50px;
+    }
+    .card_main
+    {
+        padding-left: 10px;
+        flex-shrink:0;
+    }
+    .img_SNS-card
+    {
+        border: 10px solid rgba(255, 255, 0, 0);
+        width: 30px;
+        height: 30px;
+        object-fit:cover;
+        vertical-align: middle;
+    }
+
+    .hover-card:hover 
+    {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .hover-card h3
+    {
+      margin: 0 0 5px 0;
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    h3.index
+    {
+        padding-top: 20px;
+        border-top: 2px solid rgba(0, 0, 0, 0.08);
+        text-align: center;
+    }
+
+    a
+    {
+        text-decoration: none;
+    }
+
+    @media screen and (max-width: 480px)
+    {
+        .PC
+        {
+            display: none;
+        }
+        .MB
+        {
+            display: flex;
+        }
+        .SNS-card, .hover-card
+        {
+            
+            transition: none;
+        }
+        .hover-card:hover 
+        {
+            transform: none;
+            box-shadow: 0;
+        }
+        body
+        {
+            padding-left: 10px;
+            padding-right: 10px;
+            font-size: 11px;
+        }
+        h3.index
+        {
+            font-size: 24px;
+        }
+        .hover-card h3
+        {
+            margin: 0 0 5px 0;
+            font-weight: 600;
+            font-size: 12.6px;
+            overflow-x: hidden;
+            white-space: nowrap;
+
+        }
+        .hover-card, .SNS-card
+        {
+            width: 80%;
+            user-select: none;
+        }
+        select
+        {
+            padding-left: 0%;
+        }
+    }
+
+    

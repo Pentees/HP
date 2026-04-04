@@ -1,0 +1,162 @@
+{
+    "language" : ["ja-JP", "en-US","zh-TW"],
+    "name" : ["日本語", "English(US)","繁體中文(台灣)"],
+    "SNS" : ["HP","Twitter","BlueSky"],
+    "ja-JP":
+    {
+        "title_prefics":"",
+        "title_sufics":"の超簡単な紹介ページ",
+        "name": "ノブP",
+        "describe":"25.08～の新人Pです<br>AS中心で学、シャニ、ミリ、デレを程よく追ってます<br>担当はだいたい信号機に固まってる変な人です。<br>4/3前後はRT(RP)多めになると思います、ご了承ください。<br>あんまり絡みに行くとか得意じゃないので来てくださるとありがたいです。",
+        "idols":
+        {
+            "head": "担当たち",
+            "body": 
+            {
+                "Haruka":
+                {
+                    "name":"天海春香",
+                    "production_group":"AS",
+                    "img":""
+                },
+                "Miki":
+                {
+                    "name":"星井美希",
+                    "production_group":"AS",
+                    "img":""
+                },
+                "Rin":
+                {
+                    "name":"渋谷凛",
+                    "production_group":"346",
+                    "img":""
+                },
+                "Mano":
+                {
+                    "name":"櫻木真乃",
+                    "production_group":"283",
+                    "img":""
+                },
+                "Hiori":
+                {
+                    "name":"風野灯織",
+                    "production_group":"283",
+                    "img":""
+                },
+                "Meguru":
+                {
+                    "name":"八宮めぐる",
+                    "production_group":"283",
+                    "img":""
+                },
+                "Kotone":
+                {
+                    "name":"藤田ことね",
+                    "production_group":"100",
+                    "img":""
+                }
+            }
+        },
+        "Game_Name":
+        {
+            "iDolm@ster":"アイマス",
+            "CGSS":"デレステ",
+            "MLTD":"ミリシタ",
+            "SCSP":"シャニソン",
+            "GK":"学マス",
+            "Blue_Archive_JP":"ブルアカ(日本版)"
+        },
+        "SNS_Name":
+        {
+            "HP": "HP",
+            "Twitter": "Twitter(X)",
+            "BlueSky": "BlueSky"
+        },
+        "SNS_describe":
+        {
+            "HP": "簡素、低クオ、スマホ非対応の三重苦のページ",
+            "Twitter": "主にいる場所",
+            "BlueSky": "Twitterで何かあった時用"
+        },
+        "Tap_to_Copy":"カードをタップしてIDをコピー",
+        "Click_to_Copy":"カードをクリックしてIDをコピー",
+        "Copy_Success":"コピーに成功しました！",
+        "game_ids":"Game IDs",
+        "HP":"HP",
+        "SNS":"SNS"
+    },
+    "en-US":
+    {
+        "title_prefics":"Simply Introduction of ",
+        "title_sufics":"",
+        "name": "Nobu P",
+        "describe":"New Producer(25.08)<br>765AS Main/Catching up on CG, ML, SC, GK<br>My handle are mainly the member of each main units <br>I repost great number of other Ps' posts around especially 4/3(Haruka's Birthday), so please understand I make TL-following noisy on the day<br>I'm shy guy, so please feel free to talk to me(I will not inogring, maybe...)",
+        "idols":
+        {
+            "head": "IDOLS"
+        },
+        "Game_Name":
+        {
+            "Idolm@ster":"The iDolm@ster",
+            "CGSS": "Deresute (Cinderella Girls Starlight Stage)",
+            "MLTD": "Mirishita (Milion Live Theater Days)",
+            "SCSP": "Shanison (Shiny Colors Song for Prism)",
+            "GK":"GakuM@s (Gakuen iDolm@ster)",
+            "Blue_Archive_JP":"Blue Archive(JP)"
+        },
+        "SNS_Name":
+        {
+            "HP": "HP",
+            "Twitter": "Twitter(X)",
+            "BlueSky": "BlueSky"
+        },
+        "SNS_describe":
+        {
+            "HP": "Only for Japanese! Not for Phones!",
+            "Twitter": "Mainly appear",
+            "BlueSky": "for When X goes wrong"
+        },
+        "Tap_to_Copy":"Tap this card to copy ID",
+        "Click_to_Copy":"Click this card to copy ID",
+        "Copy_Success":"ID Copyed Successfully!",
+        "game_ids":"Game IDs",
+        "HP":"My Page()",
+        "SNS":"SNS"
+    },
+    "zh-TW":
+    {
+        "title_prefics":"",
+        "title_sufics":"的簡要介紹",
+        "name": "Nobu P",
+        "idols":
+        {
+            "head": "IDOLS"
+        },
+        "Game_Name":
+        {
+            "Idolm@ster":"偶像大師",
+            "CGSS": "灰姑娘女孩 星光舞台",
+            "MLTD": "百萬現場 劇場時光",
+            "SCSP": "閃耀色彩 Song for Prism",
+            "GK":"學園偶像大師",
+            "Blue_Archive_JP":"Blue Archive(JP)"
+        },
+        "SNS_Name":
+        {
+            "HP":"我的網站",
+            "Twitter": "Twitter(X)",
+            "BlueSky": "BlueSky"
+        },
+        "SNS_describe":
+        {
+            "HP": "限日文！不相容智慧型手機！",
+            "Twitter": "在這里主要活動",
+            "BlueSky": "當Twitter故障時"
+        },
+        "Tap_to_Copy":"點選複製ID",
+        "Click_to_Copy":"點選複製ID",
+        "Copy_Success":"複製了ID！",
+        "game_ids":"遊戲 IDs",
+        "SNS":"SNS"
+    }
+}
