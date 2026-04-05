@@ -17,6 +17,12 @@
         "color" : "#009cde",
         "img":""
     },
+    "Anzu":
+    {
+        "production_group":"CG",
+        "color" : "#f8a3bc",
+        "img":""
+    },
     "Mano":
     {
         "production_group":"SC",

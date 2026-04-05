@@ -1,7 +1,7 @@
 {
     "language" : ["ja-JP", "en-US","zh-TW"],
     "name" : ["日本語", "English(US)","繁體中文(台灣)"],
-    "idols":["Haruka","Miki","Rin","Mano","Hiori","Meguru","Kotone"],
+    "idols":["Haruka","Miki","Rin","Anzu","Mano","Hiori","Meguru","Kotone"],
     "SNS" : ["HP","Twitter","BlueSky"],
     "color":
     {
@@ -18,7 +18,7 @@
         "name": "ノブP",
         "about_title_prefics" : "",
         "about_title_sufics" : "ってどんなヤツ？",
-        "describe" : "25.08～の新人Pです<br>AS中心で学、シャニ、ミリ、デレを程よく追ってます<br>担当がだいたい信号機に固まってる変な人です<br>4/3前後はRT(RP)多めになると思います、ご了承ください<br>あんまり絡みに行くとか得意じゃないので来てくださるとありがたいです<br>",
+        "describe" : "25.08～の新人Pです<br>AS中心で学、シャニ、ミリ、デレを程よく追ってます<br>ごくたまにツアマスしてます<br>4/3前後はRT(RP)多めになると思います、ご了承ください<br>あんまり絡みに行くとか得意じゃないので来てくださるとありがたいです<br>",
         "idols":
         {
             "head": "担当たち",
@@ -27,6 +27,7 @@
                 "Haruka" : "天海春香",
                 "Miki" : "星井美希",
                 "Rin" : "渋谷凛",
+                "Anzu" : "双葉杏",
                 "Mano" : "櫻木真乃",
                 "Hiori" : "風野灯織",
                 "Meguru" : "八宮めぐる",
@@ -85,6 +86,7 @@
                 "Haruka" : "Haruka Amami",
                 "Miki" : "Miki Hoshii",
                 "Rin" : "Rin Shibuya",
+                "Anzu" : "Anzu Futaba",
                 "Mano" : "Mano Sakuragi",
                 "Hiori" : "Hiori Kazano",
                 "Meguru" : "Meguru Hachimiya",
@@ -143,6 +145,7 @@
                 "Haruka" : "天海 春香",
                 "Miki" : "星井 美希",
                 "Rin" : "渋谷 凛",
+                "Anzu" : "双葉 杏",
                 "Mano" : "櫻木 真乃",
                 "Hiori" : "風野 灯織",
                 "Meguru" : "八宮 巡",
