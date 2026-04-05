@@ -5,12 +5,27 @@
         <title>a</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/HP/im@s/resource/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
     </head>
     <body>
-        <select name="language" id="lang" onchange="lang_change()"></select><br>
-        <h3 id="title"></div>
-        <h3 class="index" id="game_ids_index">Game IDs</h3>
+        <div id="menu_bar">
+            <h3 id="title"></h3>
+            <select name="language" id="lang" onchange="lang_change()"></select><br>
+        </div>
+        <div>
+            <h3 id="about_me_title" class="index_about"></h3>
+            <div id="about_me"></div>
+        </div>
+        
+        <div id="IDOLs">
+            <h3 id="idols_title" class="index">担当たち</h3>
+            <div id="idols"></div>
+        </div>
+        
         <div id="Game_ID">
+            <h3 class="index" id="game_ids_index">Game IDs</h3>
             <div class="hover-card" id="CGSS" style="color: rgb(38,129,200); background: linear-gradient(90deg,rgba(38,129,200, 0.2), rgba(38,129,200, 0.5));">
                 <h3 id="CGSS_name">
                     デレステ
@@ -58,19 +73,16 @@
         </div>
         <h3 class="index">HP</h3>
             <div class="SNS-card">
-                <div class="img_SNS-card">
-                    <img src="/HP/resource/favicon.png" style="width: 100%; height: 100%;">
-                </div>
                 <div class="card_main">
-                    <h3><a id="HP" href="https://pentees.github.io/HP/">HP(Github)</a></h3>
-                    <p id="describe_HP">ここ以上に簡素な造りのHP、超低クオ、スマホ非対応</p>
+                    <h3><a id="HP" href="/HP/">HP</a></h3>
+                    <p id="describe_HP">レスポンシブ非対応、非常に簡素</p>
                 </div>
             </div>
         <h3 class="index">SNS</h3>
         <div id="SNS">
             <div class="SNS-card">
                 <div class="img_SNS-card">
-                    <img src="/HP/im@s/resource/X_logo-black.png" style="width: 100%; height: 100%;">
+                    <img src="/HP/im@s/resource/twitter_logo.png" style="width: 100%; height: 100%;">
                 </div>
                 <div class="card_main">
                     <h3><a id="Twitter" href="https://x.com/pptx2061">Twitter</a></h3>
@@ -87,27 +99,12 @@
                 </div>
             </div>
         </div>
+        <div id="JST"></div>
         <div id="footer" style="text-align: center;">
            Copytights 2026 ノブP/pptx2061<br>
-           今の時代に手書きって結構バカなのでは...？
+           手書きﾁｶﾚﾀ...
         </div>
     </body>
-    <script>
-        function clock_JST()
-        {
-            let nowTime = new Date();
-            let nowMonth  = nowTime.getMonth() + 1;
-            let nowDate  = nowTime.getDate();
-            let nowHour = nowTime.getHours() + (9 + Math.floor(nowTime.getTimezoneOffset()/60));
-            let nowMin  = nowTime.getMinutes() + nowTime.getTimezoneOffset() % 60;
-            let nowSec  = nowTime.getSeconds();
-            nowMin = nowMin.toString().padStart(2,"0")
-            nowSec = nowSec.toString().padStart(2,"0")
-            let msg = nowMonth + "/" + nowDate + " " + nowHour + ":" + nowMin + ":" + nowSec + " now (JST)";
-            document.getElementById("JST").innerHTML = msg;
-        }
-        //setInterval(clock_JST,1000);
-    </script>
     <script>
         const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time));
 
@@ -134,45 +131,61 @@
 
         async function main()
         {
-            const res_lang = await fetch("/HP/im@s/resource/lang.json")
-            const res_ids = await fetch("/HP/im@s/resource/game_id.json")
-            const lang_json = await res_lang.json()
+            const res_lang = await fetch("/HP/im@s/resource/lang.json",{ cache: "no-cache" })
+            const resource = await res_lang.json()
+            const res_ids = await fetch("/HP/im@s/resource/game_id.json",{ cache: "no-cache" })
             const ids = await res_ids.json()
-            console.log(ids)
-            var options
-            for(i = 0; i < lang_json["language"].length; i++)
+            const res_idol = await fetch("/HP/im@s/resource/idols.json",{ cache: "no-cache" })
+            const idol = await res_idol.json()
+            var options,idol_content=""
+            for(i = 0; i < resource["language"].length; i++)
             {
-                console.info(lang_json["language"][i], lang_json["name"][i])
-                options += "<option value=" + lang_json["language"][i] + ">" + lang_json["name"][i] + "</option>"
+                console.info(resource["language"][i], resource["name"][i])
+                options += "<option value=" + resource["language"][i] + ">" + resource["name"][i] + "</option>"
             }
+
             document.getElementById("lang").innerHTML = options
-            const defaults = lang_json["language"][0]
+            const defaults = await resource["language"][0]
+
+            document.getElementById("title").innerHTML = await resource[defaults]["name"]
+            document.getElementById("about_me_title").innerHTML = await resource[defaults]["about_title_prefics"] + resource[defaults]["name"] + resource[defaults]["about_title_sufics"]
+            document.getElementById("about_me").innerHTML = await resource[defaults]["describe"]
+            
+            for(i = 0; i < resource["idols"].length; i++)
+            {
+                idol_name = resource["idols"][i]
+                idol_content += "<div class=\"idol-card " + idol[idol_name]["production_group"] + "\" id=\"" + idol_name + "\" style=\" border-color:"+ idol[idol_name]["color"] +"\">\n";
+                idol_content += "<h3 id=\"" + idol_name + "_Name\" class=\"idol_name\">"+ resource[defaults]["idols"]["body"][idol_name] +"</h4>\n";
+                idol_content += "<p id=\"" + idol_name + "_Group\" style=\"color:"+ resource["color"][idol[idol_name]["production_group"]] +"\">"+ resource[defaults]["Group"][idol[idol_name]["production_group"]] +"</p>\n";
+                idol_content += "</div>\n";
+            }
+            document.getElementById("idols_title").innerHTML = await resource[defaults]["idols"]["head"]
+            document.getElementById("idols").innerHTML = idol_content
+
             for(i = 0;i < await ids["elements"].length;i++)
             {
-                console.info(await lang_json[defaults]["Game_Name"][ids["elements"][i]])
-                var game_name_id = await ids["elements"][i]
-                console.log(game_name_id)
-                document.getElementById(ids["elements"][i] + "_name").innerHTML = await lang_json[defaults]["Game_Name"][ids["elements"][i]]
+                game_name_id = await ids["elements"][i]
+                document.getElementById(ids["elements"][i] + "_name").innerHTML = await resource[defaults]["Game_Name"][ids["elements"][i]]
                 document.getElementById(ids["elements"][i] + "_id").innerHTML = "ID: " + ids[ids["defines"][game_name_id]]
-                
-                document.getElementById("title").innerHTML = lang_json[defaults]["name"]
-
                 if(isSmartPhone() == true)
                 {
-                    document.getElementById("Copy_"+ids["elements"][i]).innerHTML = await lang_json[defaults]["Tap_to_Copy"]
+                    document.getElementById("Copy_"+ids["elements"][i]).innerHTML = await resource[defaults]["Tap_to_Copy"]
                 }
                 else
                 {
-                    document.getElementById("Copy_"+ids["elements"][i]).innerHTML = await lang_json[defaults]["Click_to_Copy"]
+                    document.getElementById("Copy_"+ids["elements"][i]).innerHTML = await resource[defaults]["Click_to_Copy"]
                 }
             }
-            document.title = await lang_json[defaults]["title_prefics"] + await lang_json[defaults]["name"] + await lang_json[defaults]["title_sufics"]
+            var idol_content = "";
+
+            document.title = await resource[defaults]["title_prefics"] + await resource[defaults]["name"] + await resource[defaults]["title_sufics"]
+            document.getElementById("title").innerHTML = document.title
         }
 
         async function copyid(game_name)
         {
-            const res_ids = await fetch("/HP/im@s/resource/game_id.json")
-            const res_lang = await fetch("/HP/im@s/resource/lang.json")
+            const res_ids = await fetch("/HP/im@s/resource/game_id.json",{ cache: "no-cache" })
+            const res_lang = await fetch("/HP/im@s/resource/lang.json",{ cache: "no-cache" })
             const ids = await res_ids.json()
             const lang_json = await res_lang.json()
             game_json_name = await ids["defines"][game_name]
@@ -195,15 +208,30 @@
         async function lang_change()
         {
             const lang = document.getElementById("lang").value
-            const res = await fetch("/HP/im@s/resource/lang.json")
-            const res_ids = await fetch("/HP/im@s/resource/game_id.json")
+            const res = await fetch("/HP/im@s/resource/lang.json",{ cache: "no-cache"})
             const resource = await res.json()
+            const res_ids = await fetch("/HP/im@s/resource/game_id.json",{ cache: "no-cache" })
             const ids = await res_ids.json()
-            console.log(resource)
-            console.log(ids)
+            const res_idol = await fetch("/HP/im@s/resource/idols.json",{ cache: "no-cache" })
+            const idol = await res_idol.json()
+
+            document.getElementById("about_me").innerHTML = await resource[lang]["describe"]
+            document.getElementById("about_me_title").innerHTML = await resource[lang]["about_title_prefics"] + await resource[lang]["name"] + await resource[lang]["about_title_sufics"]
+
+            
+            
+            document.getElementById("idols_title").innerHTML = await resource[lang]["idols"]["head"]
+            for(i = 0; i < resource["idols"].length; i++)
+            {
+                idol_name = resource["idols"][i]
+                idol_group = idol[idol_name]["production_group"]
+                document.getElementById(idol_name+"_Name").innerHTML = await resource[lang]["idols"]["body"][idol_name]
+                document.getElementById(idol_name+"_Group").innerHTML = await resource[lang]["Group"][idol_group]
+            }
             for(i = 0;i < await ids["elements"].length;i++)
             {
                 var game_name = await ids["elements"][i]
+                document.getElementById(game_name+"_name").innerHTML = await resource[lang]["Game_Name"][game_name]
                 if(isSmartPhone() == true)
                 {
                     document.getElementById("Copy_"+game_name).innerHTML = await resource[lang]["Tap_to_Copy"]
@@ -212,18 +240,15 @@
                 {
                     document.getElementById("Copy_"+game_name).innerHTML = await resource[lang]["Click_to_Copy"]
                 }
-                document.getElementById(game_name+"_name").innerHTML = await resource[lang]["Game_Name"][game_name]
             }
             for(i = 0;i < await resource["SNS"].length;i++)
             {
-                console.log(await resource["SNS"][i], await resource[lang]["SNS_Name"][resource["SNS"][i]])
-                console.log("describe_"+resource["SNS"][i], await resource[lang]["SNS_describe"][resource["SNS"][i]])
                 document.getElementById("describe_"+resource["SNS"][i]).innerHTML = await resource[lang]["SNS_describe"][resource["SNS"][i]]
                 document.getElementById(resource["SNS"][i]).innerHTML = await resource[lang]["SNS_Name"][await resource["SNS"][i]]
             }
             document.getElementById("game_ids_index").innerHTML = await resource[lang]["game_ids"]
-            document.getElementById("game_ids_index").innerHTML = await resource[lang]["name"]
             document.title = await resource[lang]["title_prefics"] + await resource[lang]["name"] + await resource[lang]["title_sufics"]
+            document.getElementById("title").innerHTML = document.title
         }
 
         main()
@@ -244,5 +269,22 @@
         {
             copyid('GK')         
         });
+    </script>
+    <script>
+        function clock_JST()
+        {
+            let nowTime = new Date();
+            let nowMonth  = nowTime.getMonth() + 1;
+            let nowDate  = nowTime.getDate();
+            let nowHour = nowTime.getHours() + (9 + Math.floor(nowTime.getTimezoneOffset()/60));
+            let nowMin  = nowTime.getMinutes() + nowTime.getTimezoneOffset() % 60;
+            let nowSec  = nowTime.getSeconds();
+            nowMin = nowMin.toString().padStart(2,"0")
+            nowSec = nowSec.toString().padStart(2,"0")
+            let msg = nowMonth + "/" + nowDate + " " + nowHour + ":" + nowMin + ":" + nowSec + " now (JST)";
+            document.getElementById("JST").innerHTML = msg;
+            return [nowMonth, nowDate, nowHour, nowMin, nowSec]
+        }
+        setInterval(clock_JST, 1000);
     </script>
 </html>
