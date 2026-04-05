@@ -1,0 +1,44 @@
+{
+    "Haruka":
+    {
+        "production_group":"AS",
+        "color":"#e22b30;",
+        "img":""
+    },
+    "Miki":
+    {
+        "production_group":"AS",
+        "color":"#b4e04b;",
+        "img":""
+    },
+    "Rin":
+    {
+        "production_group":"CG",
+        "color" : "#009cde",
+        "img":""
+    },
+    "Mano":
+    {
+        "production_group":"SC",
+        "color":"#ffbad6;",
+        "img":""
+    },
+    "Hiori":
+    {
+        "production_group":"SC",
+        "color":"#144384;",
+        "img":""
+    },
+    "Meguru":
+    {
+        "production_group":"SC",
+        "color":"#ffe012;",
+        "img":""
+    },
+    "Kotone":
+    {
+        "production_group":"GK",
+        "color":"#f8c112;",
+        "img":""
+    }
+}

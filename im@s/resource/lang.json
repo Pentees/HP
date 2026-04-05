@@ -1,70 +1,54 @@
 {
     "language" : ["ja-JP", "en-US","zh-TW"],
     "name" : ["日本語", "English(US)","繁體中文(台灣)"],
+    "idols":["Haruka","Miki","Rin","Mano","Hiori","Meguru","Kotone"],
     "SNS" : ["HP","Twitter","BlueSky"],
+    "color":
+    {
+        "AS":"#f34f6d",
+        "CG":"#2681c8",
+        "ML":"#ffc30b",
+        "SC":"#8dbbff",
+        "GK":"#f39800"
+    },
     "ja-JP":
     {
-        "title_prefics":"",
-        "title_sufics":"の超簡単な紹介ページ",
+        "title_prefics" : "",
+        "title_sufics" : "の超簡単な紹介ページ",
         "name": "ノブP",
-        "describe":"25.08～の新人Pです<br>AS中心で学、シャニ、ミリ、デレを程よく追ってます<br>担当はだいたい信号機に固まってる変な人です。<br>4/3前後はRT(RP)多めになると思います、ご了承ください。<br>あんまり絡みに行くとか得意じゃないので来てくださるとありがたいです。",
+        "about_title_prefics" : "",
+        "about_title_sufics" : "ってどんなヤツ？",
+        "describe" : "25.08～の新人Pです<br>AS中心で学、シャニ、ミリ、デレを程よく追ってます<br>担当がだいたい信号機に固まってる変な人です<br>4/3前後はRT(RP)多めになると思います、ご了承ください<br>あんまり絡みに行くとか得意じゃないので来てくださるとありがたいです<br>",
         "idols":
         {
             "head": "担当たち",
             "body": 
             {
-                "Haruka":
-                {
-                    "name":"天海春香",
-                    "production_group":"AS",
-                    "img":""
-                },
-                "Miki":
-                {
-                    "name":"星井美希",
-                    "production_group":"AS",
-                    "img":""
-                },
-                "Rin":
-                {
-                    "name":"渋谷凛",
-                    "production_group":"346",
-                    "img":""
-                },
-                "Mano":
-                {
-                    "name":"櫻木真乃",
-                    "production_group":"283",
-                    "img":""
-                },
-                "Hiori":
-                {
-                    "name":"風野灯織",
-                    "production_group":"283",
-                    "img":""
-                },
-                "Meguru":
-                {
-                    "name":"八宮めぐる",
-                    "production_group":"283",
-                    "img":""
-                },
-                "Kotone":
-                {
-                    "name":"藤田ことね",
-                    "production_group":"100",
-                    "img":""
-                }
+                "Haruka" : "天海春香",
+                "Miki" : "星井美希",
+                "Rin" : "渋谷凛",
+                "Mano" : "櫻木真乃",
+                "Hiori" : "風野灯織",
+                "Meguru" : "八宮めぐる",
+                "Kotone" : "藤田ことね"
             }
+        },
+        "Group":
+        {
+            "AS":"765PRO ALLSTARS",
+            "CG":"Cinderella Girls",
+            "ML":"765PRO MILLIONSTARS",
+            "SC":"Shiny Colors",
+            "GK":"学園アイドルマスター"
         },
         "Game_Name":
         {
-            "iDolm@ster":"アイマス",
-            "CGSS":"デレステ",
-            "MLTD":"ミリシタ",
-            "SCSP":"シャニソン",
-            "GK":"学マス",
-            "Blue_Archive_JP":"ブルアカ(日本版)"
+            "iDolm@ster" : "アイマス",
+            "CGSS" : "デレステ",
+            "MLTD" : "ミリシタ",
+            "SCSP" : "シャニソン",
+            "GK" : "学マス",
+            "Blue_Archive_JP" : "ブルアカ(日本版)"
         },
         "SNS_Name":
         {
@@ -74,35 +58,55 @@
         },
         "SNS_describe":
         {
-            "HP": "簡素、低クオ、スマホ非対応の三重苦のページ",
+            "HP": "レスポンシブ非対応、非常に簡素",
             "Twitter": "主にいる場所",
             "BlueSky": "Twitterで何かあった時用"
         },
-        "Tap_to_Copy":"カードをタップしてIDをコピー",
-        "Click_to_Copy":"カードをクリックしてIDをコピー",
-        "Copy_Success":"コピーに成功しました！",
-        "game_ids":"Game IDs",
-        "HP":"HP",
-        "SNS":"SNS"
+        "Tap_to_Copy" : "カードをタップしてIDをコピー",
+        "Click_to_Copy" : "カードをクリックしてIDをコピー",
+        "Copy_Success" : "コピーに成功しました！",
+        "game_ids" : "Game IDs",
+        "HP" : "HP",
+        "SNS" : "SNS"
     },
     "en-US":
     {
-        "title_prefics":"Simply Introduction of ",
-        "title_sufics":"",
+        "title_prefics" : "Simply Introduction of ",
+        "title_sufics" : "",
         "name": "Nobu P",
-        "describe":"New Producer(25.08)<br>765AS Main/Catching up on CG, ML, SC, GK<br>My handle are mainly the member of each main units <br>I repost great number of other Ps' posts around especially 4/3(Haruka's Birthday), so please understand I make TL-following noisy on the day<br>I'm shy guy, so please feel free to talk to me(I will not inogring, maybe...)",
+        "about_title_prefics" : "Who are you, ",
+        "about_title_sufics" : "?",
+        "describe" : "New Producer(since 25.08)<br>765AS Main/Catching up on CG, ML, SC, GK at my own pace.<br>I repost great number of other Ps' posts around 4/3(Haruka's Birthday), so please understand I make TL(following) noisy on the day<br>Thank you for reading not good English passage!",
         "idols":
         {
-            "head": "IDOLS"
+            "head": "IDOLs",
+            "body": 
+            {
+                "Haruka" : "Haruka Amami",
+                "Miki" : "Miki Hoshii",
+                "Rin" : "Rin Shibuya",
+                "Mano" : "Mano Sakuragi",
+                "Hiori" : "Hiori Kazano",
+                "Meguru" : "Meguru Hachimiya",
+                "Kotone" : "Kotone Fujita"
+            }
+        },
+        "Group":
+        {
+            "AS":"765PRO ALLSTARS",
+            "CG":"Cinderella Girls",
+            "ML":"765PRO MILLIONSTARS",
+            "SC":"Shiny Colors",
+            "GK":"Gakuen iDolm@ster"
         },
         "Game_Name":
         {
-            "Idolm@ster":"The iDolm@ster",
-            "CGSS": "Deresute (Cinderella Girls Starlight Stage)",
-            "MLTD": "Mirishita (Milion Live Theater Days)",
-            "SCSP": "Shanison (Shiny Colors Song for Prism)",
-            "GK":"GakuM@s (Gakuen iDolm@ster)",
-            "Blue_Archive_JP":"Blue Archive(JP)"
+            "Idolm@ster" : "The iDolm@ster",
+            "CGSS": "Cinderella Girls Starlight Stage",
+            "MLTD": "Milion Live Theater Days",
+            "SCSP": "Shiny Colors Song for Prism",
+            "GK" : "Gakuen iDolm@ster",
+            "Blue_Archive_JP" : "Blue Archive(JP)"
         },
         "SNS_Name":
         {
@@ -116,34 +120,55 @@
             "Twitter": "Mainly appear",
             "BlueSky": "for When X goes wrong"
         },
-        "Tap_to_Copy":"Tap this card to copy ID",
-        "Click_to_Copy":"Click this card to copy ID",
-        "Copy_Success":"ID Copyed Successfully!",
-        "game_ids":"Game IDs",
-        "HP":"My Page()",
-        "SNS":"SNS"
+        "Tap_to_Copy" : "Tap this card to copy ID",
+        "Click_to_Copy" : "Click this card to copy ID",
+        "Copy_Success" : "ID Copyed Successfully!",
+        "game_ids" : "Game IDs",
+        "HP" : "My Page()",
+        "SNS" : "SNS"
     },
     "zh-TW":
     {
-        "title_prefics":"",
-        "title_sufics":"的簡要介紹",
+        "title_prefics" : "",
+        "title_sufics" : "的簡要介紹",
         "name": "Nobu P",
+        "about_title_prefics" : "",
+        "about_title_sufics" : "是誰？",
+        "describe" : "新人製作人(從25.08)<br>追主要765AS，也其他品牌。<br>為了我4/3會轉發很多春香P的貼文和圖片，請理解Timeline會很活躍。<br>恐怕，這文章有錯。如果你發現文法錯誤，請告訴我。<br>感謝閱讀我的糟糕的中文文章!<br>",
         "idols":
         {
-            "head": "IDOLS"
+            "head": "擔當偶像",
+            "body": 
+            {
+                "Haruka" : "天海 春香",
+                "Miki" : "星井 美希",
+                "Rin" : "渋谷 凛",
+                "Mano" : "櫻木 真乃",
+                "Hiori" : "風野 灯織",
+                "Meguru" : "八宮 巡",
+                "Kotone" : "藤田 琴音"
+            }
+        },
+        "Group":
+        {
+            "AS":"765PRO ALLSTARS",
+            "CG":"灰姑娘女孩",
+            "ML":"765PRO MILLIONSTARS",
+            "SC":"閃耀色彩",
+            "GK":"學園偶像大師"
         },
         "Game_Name":
         {
-            "Idolm@ster":"偶像大師",
+            "Idolm@ster" : "偶像大師",
             "CGSS": "灰姑娘女孩 星光舞台",
             "MLTD": "百萬現場 劇場時光",
             "SCSP": "閃耀色彩 Song for Prism",
-            "GK":"學園偶像大師",
-            "Blue_Archive_JP":"Blue Archive(JP)"
+            "GK" : "學園偶像大師",
+            "Blue_Archive_JP" : "Blue Archive(JP)"
         },
         "SNS_Name":
         {
-            "HP":"我的網站",
+            "HP" : "我的網站",
             "Twitter": "Twitter(X)",
             "BlueSky": "BlueSky"
         },
@@ -153,10 +178,10 @@
             "Twitter": "在這里主要活動",
             "BlueSky": "當Twitter故障時"
         },
-        "Tap_to_Copy":"點選複製ID",
-        "Click_to_Copy":"點選複製ID",
-        "Copy_Success":"複製了ID！",
-        "game_ids":"遊戲 IDs",
-        "SNS":"SNS"
+        "Tap_to_Copy" : "點選複製ID",
+        "Click_to_Copy" : "點選複製ID",
+        "Copy_Success" : "複製了ID！",
+        "game_ids" : "遊戲 IDs",
+        "SNS" : "SNS"
     }
 }
