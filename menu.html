@@ -16,14 +16,7 @@
               console.log("A")
           </script>
         </div>
-        <script>
-            fetch("/HP/resource/header.html")
-              .then((response) => response.text())
-              .then((data) => document.querySelector("#menu").innerHTML = data);
-            fetch("/HP/resource/footer.html")
-              .then((response) => response.text())
-              .then((data) => document.querySelector("#footer").innerHTML = data);
-        </script>
+        <script src="/HP/resource/fetch.js"></script>
         <style>
             a#menu
             {
@@ -53,7 +46,10 @@
                 ┗━ <a href="./log.html">やったことの記録</a><br>
                 <a href="./Note/">備忘録集</a><br>
                 ┣━ <a href="./Note/char_special.html">記号文字集</a><br>
-                ┗━ <a href="./Note/css_table.html">HTML、CSS関連</a><br>
+                ┣━ <a href="./Note/css_table.html">HTML、CSS関連</a><br>
+                ┗━ <a href="./Note/js_cdn_resolve.html">CDNのはなし</a><br>
+                <a href="./Blog/">日記帳</a><br>
+                <a href="./im@s/">P向けのページ</a><br>
             </div>
         </div>
         <div id="footer" style="display: inline;"></div>

@@ -16,14 +16,7 @@
               console.log("A")
           </script>
         </div>
-        <script>
-            fetch("/HP/resource/header.html")
-              .then((response) => response.text())
-              .then((data) => document.querySelector("#menu").innerHTML = data);
-            fetch("/HP/resource/footer.html")
-              .then((response) => response.text())
-              .then((data) => document.querySelector("#footer").innerHTML = data);
-        </script>
+        <script src="/HP/resource/fetch.js"></script>
         <style>
             a#home
             {
@@ -31,18 +24,6 @@
                 border: solid 1px grey;
                 border-top: 0px;
                 margin-bottom: 3px gainsboro;
-            }
-            a.hidden_link
-            {
-              color: rgb(64, 144, 144);
-            }
-            a:visited.hidden_link
-            {
-                color : rgb(64, 144, 144);
-            }
-            a:hover.hidden_link
-            {
-              color: rgb(222, 222, 222);
             }
         </style>
     </head>
@@ -54,24 +35,33 @@
           <div style="padding-left: 15px;">
             <div>
               <div style="padding-left: 10px;">
-                個人サイトの需要なんてもうないような時代に作ったサイトへようこそ<br>
-                スマホっていう現代的な通信装置を考えて作ってないのでPCで来られることを推奨<br>
+                辺境の地へようこそ<br>
+                スマホを考えて作ってないのでPCで来られることを推奨<br>
               </div>
             </div>
             <div style="padding-top: 15px;">
               <h3>サイトの制作主について</h3>
               <div style="padding-left: 10px; padding-top: 2px;">
-                男子校の高校2年生、もうじき受験生<br>
+                高校3年生<br>
                 Duolingoで中国語と韓国語を交互に勉強中<br>
-                ブルアカとアイマスとニコニコとコーラが生きがい<br>
+                アイマスとニコニコとコーラが生きがい<br>
+                Pの皆さんは<a href="/HP/im@s/">こちらへ</a><br>
                 <span style="color: rgb(64, 144, 144);">もう少し細かいことは<a class="hidden_link" href="./detail.html">ここから</a></span>
               </div>
             </div>
+            <div style="padding-top: 15px;">
+              <h3>ひとこと</h3>
+              <div style="padding-left: 10px; padding-top: 2px;">
+                みんな個人サイト作ってくれ！<br>
+                くっそ楽しい！<br>
+              </div>
+            </div>
+            <br>
             <div>
               <h3>各種SNSのリンク</h3>
               <div style="padding-left: 10px; padding-top: 2px;">
                 <a href="./link.html">ここから</a>どうぞ<br>
-                <span style="color: rgb(64, 144, 144);">各種とか言いながら2種類しかないというのは口が裂けても言えない...</span>
+                <span style="color: rgb(64, 144, 144);">各種とか言いながら2種類だけ...</span>
               </div>
             </div>
           </div>
@@ -89,34 +79,6 @@
               <div style="padding-top: 50px;">Copyrights pptx2061, All rights reserved.</div>
             </center>
           </noscript>
-          <!--
-            <div>
-              <h3>リンク</h3>
-              <div style="padding-left: 10px;  padding-top: 2px;">
-                <h4 style="font-weight: 100;">&nbsp;<a href="javascript:OnLinkClick();">http://pentees.github.io/HP/ja-JP/</a></h4>
-                ↑ここのリンクです<br>
-                張りたい方勝手に張って、どうぞ<br>
-                メールよこしてくれると勝手に喜びます<br>
-              </div>
-            </div>
-            <script src="//cdn.rawgit.com/namuol/cheet.js/master/cheet.min.js"
-        type="text/javascript"></script>
-            <script>
-              function OnLinkClick()
-              {
-                const url = "http://pentees.github.io/HP/ja-JP/"
-                const tempInput = document.createElement('input');
-                tempInput.value = url;
-                document.body.appendChild(tempInput);
-                tempInput.select();
-                document.execCommand('copy');
-                document.body.removeChild(tempInput);
-                console.log('URL copied successfully');
-                return false;
-              }
-              
-            </script>
-          -->
         </div>
     </body>
 </html>

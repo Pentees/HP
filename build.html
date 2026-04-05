@@ -15,14 +15,7 @@
               console.log("A")
           </script>
         </div>
-        <script>
-            fetch("/HP/resource/header.html")
-                .then((response) => response.text())
-                .then((data) => document.querySelector("#menu").innerHTML = data);
-            fetch("/HP/resource/footer.html")
-                .then((response) => response.text())
-                .then((data) => document.querySelector("#footer").innerHTML = data);
-        </script>
+        <script src="/HP/resource/fetch.js"></script>
         <style>
             a#build
             {
@@ -38,13 +31,19 @@
         <div id="main_content">
             <h1>サイトの情報</h1>
             <div style="padding-top: 10px; padding-left: 10px;">
-                バージョン:2.1.2603-jp
+                バージョン:2.1.2604-jp
                 <div style="padding-left: 10px;">
                     公開日 2023.11.5<br>
-                    最終更新日 2026.3.30<br>
+                    最終更新日 2026.4.6<br>
                 </div>
                 <br>
-                記録は<a href="./log.html">こちらから</a><br>
+                <div>
+                    <h4>変更・修正点</h4>
+                    JS-fetchの全ページ適用<br>
+                    アイマスP向けページ(/im@s/)を設置<br>
+                    Blogトップページの不具合を修正<br>
+                </div>
+                過去の記録は<a href="./log.html">こちらから</a><br>
             </div>
         </div>
         
