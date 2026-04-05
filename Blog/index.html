@@ -6,9 +6,6 @@
         <link rel="stylesheet" href="/HP/resource/common.css">
         <link rel="icon" href="/HP/resource/favicon.png">
         <link rel="stylesheet" href="resource/menu_sub.css">
-        <script src="resource/fetch.js"></script>
-        <script src="resource/time_zone.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@latest"></script>
         <style>
             a#blog
             {
@@ -45,12 +42,20 @@
         <div id="footer" style="display: inline;"></div>
     </body>
     <script src="resource/time_zone.js"></script>
+    <script src="resource/fetch.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@latest"></script>
     <script>
         Client = supabase.createClient("https://pnphgrrdxktvklvvttgy.supabase.co", "sb_publishable_Pzfhf6ual5l3CMxwESMEbg_h1CxdoeU");
 
         async function set_Base(set_Contents)
         {
             n = 0;
+            console.log(set_Contents.length)
+            if(set_Contents.length == 0)
+            {
+                document.getElementById("latest1").innerHTML = "読めるものが何もないよ！"
+                return
+            }
             for(i = 0; i < set_Contents.length; i++)
             {
                 content_list = []
@@ -82,7 +87,10 @@
                     }
                     else
                     {
-                        tag += "#"+ set_Contents[i][5].slice(0) +" "; 
+                        if(set_Contents[i][5] != 0)
+                        {
+                            tag += "#"+ set_Contents[i][5].slice(0) +" "; 
+                        }
                     }
                 }
                 if (set_Contents[i][6] != "ja-JP")
@@ -103,8 +111,8 @@
         async function main()
         {
             var html_replace = []
-            var response = await Client.from("Titles").select('*, Articles(title )').order('created_at', { ascending: false }).limit(10)
-            var env_res = await fetch("/HP/resource/resource.json")
+            var response = await Client.from("Titles").select('*, Articles(title )').eq('Flag_Hidden', false).order('created_at', { ascending: false }).limit(10)
+            var env_res = await fetch("/HP/resource/resource.json", {cache:"no-cache"})
             response = await response["data"]
             console.info(await response)
             const env = await env_res.json()

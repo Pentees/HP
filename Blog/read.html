@@ -2,7 +2,7 @@
 
 <html>
     <head>
-        <title>魔境へようこそ</title>
+        <title>魔境の辺境</title>
         <link rel="stylesheet" href="/HP/resource/common.css">
         <link rel="icon" href="/HP/resource/favicon.png">
         <link rel="stylesheet" href="resource/menu_sub.css">
@@ -18,23 +18,24 @@
             }
         </style>
     </head>
-    <body translate="no">
-        <div id="menu" style="display: inline;"></div>
-        <div id="menu_sub" style="display: inline;"></div>
+    <body>
+        <div id="menu" style="display: inline;" translate="no"></div>
         <div id="main_content">
-            <h1>日記帳と雑記</h1>
-            <div style="padding-top: 10px; padding-left: 10px;" id="main">
-            </div>
+            <h3 style="padding-top: 10px; padding-left: 10px;" id="title"></h3>
+            <div style="padding-top: 10px; padding-left: 10px;" id="created_at"></div>
+            <div style="padding-top: 10px; padding-left: 10px;" id="updated_at"></div>
+            <div style="padding-top: 10px; padding-left: 10px;" id="main"></div>
         </div>
-        <div id="footer" style="display: inline;"></div>
+        <div id="footer" style="display: inline;" translate="no"></div>
     </body>
     <script>
         Client = supabase.createClient("https://pnphgrrdxktvklvvttgy.supabase.co", "sb_publishable_Pzfhf6ual5l3CMxwESMEbg_h1CxdoeU");
 
         async function main()
         {
+            var title_blog = ""
             var lang = null;
-            const res = await fetch("/HP/resource/resource.json")
+            const res = await fetch("/HP/resource/resource.json", {cache:"no-cache"})
             const multilang = await res.json()
             if(navigator.language.length < 4)
             {
@@ -66,17 +67,17 @@
                     }
                 });
             console.log(id)
-            const response = await Client.from("Articles").select("*, Titles(created_at, language)").eq("id", id)
+            const response = await Client.from("Articles").select("*, Titles(created_at, last_updated_at, language)").eq("id", id)
             console.log(await response)
             const set_Contents = await response["data"][0]
             console.log(await set_Contents)
             if(await set_Contents["title"] != "")
             {
-                title_blog = await set_Contents["title"]
+                title_blog += await set_Contents["title"]
             }
             else
             {
-                title_blog = multilang[lang]["untitled"]
+                title_blog += multilang[lang]["untitled"]
             }
             if(await set_Contents["contents"] != "")
             {
@@ -86,15 +87,18 @@
             {
                 content = multilang[lang]["untexted"]
             }
-            console.log(lang, set_Contents["Titles"]["language"])
             if( lang != await set_Contents["Titles"]["language"])
             {
                 content = "<span style=\"color:orange\">"+ multilang[lang]["caution"] +":" + multilang[lang]["other_language_notice"] + "</span><br>" + content
             }
-            document.title = await title_blog + "-pptx2061"
-            title_blog +=  "<br>" + Conv_UTC(await set_Contents["Titles"]["created_at"])
-            const Contents_Set = await title_blog + "<br>" + await content
-            document.getElementById("main").innerHTML = await Contents_Set;
+            document.title = await title_blog + " - pptx2061"
+            document.getElementById("title").innerHTML = await title_blog;
+            document.getElementById("created_at").innerHTML = Conv_UTC(await set_Contents["Titles"]["created_at"]) + " 投稿"
+            if(await set_Contents["Titles"]["last_updated_at"] != "")
+            {
+                document.getElementById("updated_at").innerHTML = Conv_UTC(await set_Contents["Titles"]["last_updated_at"]) + " 修正<br>"
+            }
+            document.getElementById("main").innerHTML = await content;
             document.getElementById("main").setAttribute("Lang", set_Contents["Titles"]["language"])
             document.getElementById("main").setAttribute("translate", "yes")
         }
