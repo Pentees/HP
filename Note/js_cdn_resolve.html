@@ -6,25 +6,20 @@
         <link rel="stylesheet" href="/HP/resource/common.css">
         <link rel="icon" href="/HP/resource/favicon.png">
         <link rel="stylesheet" href="resource/menu_sub.css">
-        <script src="resource/fetch.js"></script>
         <style>
-            a#menu
+            a#Note
             {
                 background-color: aqua;
                 border: solid 1px grey;
                 border-top: 0px;
             }
 
-            .char
+            a#cdn_js
             {
-                width: 300px;
-                text-align: center;
-                border: 2px solid aliceblue;
-                border-collapse: collapse;
-                background-color: silver;
-                color: black;
-
-            } 
+                background-color: aquamarine;
+                border: solid 1px grey;
+                border-top: 0px;
+            }
 
             td
             {
@@ -65,48 +60,86 @@
                 んで、Pythonを使ったAPI Serverを建ててそこを介する処理にしようとしましたが、面倒くさくってやめました。(この間2週間)<br>
                 そして、ネットの海をさまよっていると、こんなものを発見<br>
 <pre>
-
 &lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
-&lt;head&gt;
-    &lt;script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@latest"&gt;&lt;/script&gt;
-&lt;/head&gt;
-...
-&lt;script&gt;
-class SupabaseClientComponent extends HTMLElement {
-    constructor() {
-        super();
-        this.supabaseUrl = '';
-        this.supabaseKey = ''; 
-        this.supabase = null;
+    &lt;head&gt;
+        &lt;script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@latest"&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    ...
+    &lt;script&gt;
+    class SupabaseClientComponent extends HTMLElement {
+        constructor() {
+            super();
+            this.supabaseUrl = '';
+            this.supabaseKey = ''; 
+            this.supabase = null;
+        }
+
+        connectedCallback() {
+            this.initializeSupabase();
+        }
+
+        initializeSupabase() {
+            this.supabase = supabase.createClient(this.supabaseUrl, this.supabaseKey);
+            console.log('Supabase client has been initialized:', this.supabase);
+            // Now you can use this.supabase to make requests to your Supabase project.
+        }
     }
 
-    connectedCallback() {
-        this.initializeSupabase();
-    }
+    // Define the new element
+    customElements.define('supabase-client', SupabaseClientComponent);
 
-    initializeSupabase() {
-        this.supabase = supabase.createClient(this.supabaseUrl, this.supabaseKey);
-        console.log('Supabase client has been initialized:', this.supabase);
-        // Now you can use this.supabase to make requests to your Supabase project.
-    }
-}
-
-// Define the new element
-customElements.define('supabase-client', SupabaseClientComponent);
-
-&lt;/script&gt;
+    &lt;/script&gt;
 &lt;/html&gt;
 
 <a href="https://github.com/supabase/supabase/issues/21261#issuecomment-1946066213">https://github.com/supabase/supabase/issues/21261#issuecomment-1946066213</a>より
 
 </pre>
-                importはいらない子だったということです。ありがとう海外ニキ。<br>
+                つまりimportはいらない子だったということです。ありがとう海外ニキ。<br>
                 CDNインストール(scriptタグを使う、Web向け)を行うのならばimportを使わないように！<br>
                 公式ドキュメントから何も考えずにコピペしてくると必ずブチ当たる間違いだと思います、気を付けてください！<br>
                 ここさえ乗り越えたらあとは公式ドキュメントを使って何でもできます、つまり無敵です
             </div>
         </div>
+        <noscript>
+            <center>
+                <style>
+                    a#cdn_js
+                    {
+                        background-color: aquamarine;
+                        color: orangered;
+                        border: solid 1px grey;
+                        border-top: 0px;
+                    }
+
+                    a:hover#cdn_js
+                    {
+                        background-color: cornflowerblue;
+                        color: orange;
+                    }
+                </style>
+                以下は現代のJavaScriptが使えない人向けです<br>
+                勝手に使ってください<br>
+                <br>
+                <div>
+                    トップディレクトリ(pentees.github.io/HP/)配下のものたち<br>
+                    <a href="/HP/index.html" class="menu" id="home">サイトトップ</a>
+                    <a href="/HP/build.html" class="menu" id="build">変なところ</a>
+                    <a href="/HP/link.html" class="menu" id="link">SNSへのリンク</a>
+                    <a href="/HP/menu.html" class="menu" id="menu">よくわかんない他のやつら</a>
+                </div>
+                <br>
+                <div>
+                    このディレクトリ(pentees.github.io/HP/Note/)配下のものたち<br>
+                    <a href="./index.html" class="menu" id="home_note">トップ</a>
+                    <a href="./char_special.html" class="menu" id="char">記号と文字コード</a>
+                    <a href="./css_table.html" class="menu" id="css_PC">CSS(PC用)</a>
+                    <a href="./js_cdn_resolve.html" class="menu" id="cdn_js">CDNとJavascript</a>
+                </div>
+                <div style="padding-top: 50px;">Copyrights 2026 pptx2061, All rights reserved.</div>
+            </center>
+        </noscript>
         <div id="footer" style="display: inline;"></div>
     </body>
+    <script src="resource/fetch.js"></script>
 </html>

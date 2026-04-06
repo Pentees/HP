@@ -5,17 +5,17 @@
         <title>備忘録的な何か</title>
         <link rel="stylesheet" href="/HP/resource/common.css">
         <link rel="icon" href="/HP/resource/favicon.png">
-        <link rel="stylesheet" href="resource/menu_sub.css">
+        <link rel="stylesheet" href="./resource/menu_sub.css">
         <script src="resource/fetch.js"></script>
         <style>
             a#Note
             {
-                background-color: aqua;
+                background-color: aquamarine;
                 border: solid 1px grey;
                 border-top: 0px;
             }
 
-            a#note_top
+            a#home_note
             {
                 background-color: aquamarine;
                 border: solid 1px grey;
@@ -33,11 +33,49 @@
                 <div style="padding-left: 10px;">
                     <a href="char_special.html">特殊記号文字</a><br>
                     <a href="css_table.html">CSS指定(PC用)</a><br>
-                    <a href="js_cdn_resolve.html">Blog作った時のやつ(CDN)</a><br>
+                    <a href="js_cdn_resolve.html">Blog作った時のやつ(CDN関係)</a><br>
                 </div>
                 <br>
             </div>
         </div>
+        <noscript>
+            <center>
+                <style>
+                    a#home_note
+                    {
+                        background-color: aquamarine;
+                        color: orangered;
+                        border: solid 1px grey;
+                        border-top: 0px;
+                    }
+
+                    a:hover#home_note
+                    {
+                        background-color: cornflowerblue;
+                        color: orange;
+                    }
+                </style>
+                以下は現代のJavaScriptが使えない人向けです<br>
+                勝手に使ってください<br>
+                <br>
+                <div>
+                    トップディレクトリ(pentees.github.io/HP/)配下のものたち<br>
+                    <a href="/HP/index.html" class="menu" id="home">サイトトップ</a>
+                    <a href="/HP/build.html" class="menu" id="build">変なところ</a>
+                    <a href="/HP/link.html" class="menu" id="link">SNSへのリンク</a>
+                    <a href="/HP/menu.html" class="menu" id="menu">よくわかんない他のやつら</a>
+                </div>
+                <br>
+                <div>
+                    このディレクトリ(pentees.github.io/HP/Note/)配下のものたち<br>
+                    <a href="./index.html" class="menu" id="home_note">トップ</a>
+                    <a href="./char_special.html" class="menu" id="char">記号と文字コード</a>
+                    <a href="./css_table.html" class="menu" id="css_PC">CSS(PC用)</a>
+                    <a href="./js_cdn_resolve.html" class="menu" id="cdn_js">CDNとJavascript</a>
+                </div>
+                <div style="padding-top: 50px;">Copyrights 2026 pptx2061, All rights reserved.</div>
+            </center>
+        </noscript>
         <div id="footer" style="display: inline;"></div>
     </body>
 </html>
