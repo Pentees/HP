@@ -19,7 +19,7 @@
     background-color: rgb(192,192,192);
     list-style: none;
     float: left;
-    border-right: 1px solid #bbbbbb;
+    border-right: 2px solid #bbbbbb;
     border-left: 1px solid #bbbbbb;
 }
 #menu_sub li a

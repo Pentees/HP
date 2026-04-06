@@ -53,8 +53,16 @@
 
             footer
             {
-                margin-left:15px;
+                padding-top: 100px;
                 text-align: center;
+                padding-bottom: 100px;
+            }
+
+            noscript
+            {
+                display: block;
+                padding-top: 100px;
+                padding-bottom: 100px;
             }
 
             h1
@@ -108,7 +116,6 @@
                 color: aliceblue;
                 height: 31px;
                 top: 0;
-                left: 0;
                 list-style-type:disc;
                 margin: 0px;
                 border-top: 1px solid;
