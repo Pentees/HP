@@ -21,17 +21,19 @@
     float: left;
     border-right: 2px solid #bbbbbb;
     border-left: 1px solid #bbbbbb;
-}
-#menu_sub li a
-{
-    display: block;
-    color: black;
     text-align: center;
-    padding: 7px 10px;
     text-decoration: none;
 }
 
-#menu_sub li a:hover:not(.active)
+#menu_sub a
+{
+    display: block;
+    float: left;
+    padding: 7px 10px;
+    color: black;
+}
+
+#menu_sub a:hover:not(.active)
 {
     background-color: #a9bce2;
 }

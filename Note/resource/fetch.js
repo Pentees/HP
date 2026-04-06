@@ -6,4 +6,4 @@ fetch("/HP/resource/footer.html")
         .then((data) => document.querySelector("#footer").innerHTML = data);
 fetch("/HP/Note/resource/header_sub.html")
         .then((response) => response.text())
-        .then((data) => document.querySelector("#menu_sub").innerHTML = data);
+        .then((data) => document.querySelector("#menu_sub").innerHTML += data);
