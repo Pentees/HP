@@ -21,12 +21,33 @@
     <body>
         <div id="menu" style="display: inline;" translate="no"></div>
         <div id="main_content">
+            <noscript>
+                <span style="color: orange;">
+                    このページではJavaScriptが必須ですが、無効となっています！<br>
+                    javascriptを有効化してください！
+                </span>
+            </noscript>
             <h3 style="padding-top: 10px; padding-left: 10px;" id="title"></h3>
             <div style="padding-top: 10px; padding-left: 10px;" id="created_at"></div>
             <div style="padding-top: 10px; padding-left: 10px;" id="updated_at"></div>
             <div style="padding-top: 10px; padding-left: 10px;" id="main"></div>
         </div>
-        <div id="footer" style="display: inline;" translate="no"></div>
+        <noscript>
+            <center>
+                以下は現代のJavaScriptが使えない人向けです<br>
+                勝手に使ってください<br>
+                <br>
+                <div>
+                    トップディレクトリ(pentees.github.io/HP/)配下のものたち<br>
+                    <a href="/HP/index.html" class="menu" id="home">サイトトップ</a>
+                    <a href="/HP/build.html" class="menu" id="build">変なところ</a>
+                    <a href="/HP/link.html" class="menu" id="link">SNSへのリンク</a>
+                    <a href="/HP/menu.html" class="menu" id="menu">よくわかんない他のやつら</a>
+                </div>
+                <div style="padding-top: 50px;">Copyrights 2026 pptx2061, All rights reserved.</div>
+            </center>
+        </noscript>
+        <div id="footer" translate="no"></div>
     </body>
     <script>
         Client = supabase.createClient("https://pnphgrrdxktvklvvttgy.supabase.co", "sb_publishable_Pzfhf6ual5l3CMxwESMEbg_h1CxdoeU");
