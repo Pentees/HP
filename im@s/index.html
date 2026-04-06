@@ -122,7 +122,7 @@
         var event_touch_click = null
         if(isTouchable)
         {
-            event_touch_click = "touchstart"
+            event_touch_click = "touchend"
         }
         else
         {
@@ -252,22 +252,88 @@
         }
 
         main()
-        console.log(event_touch_click)
-        document.querySelector("#CGSS").addEventListener(event_touch_click, () =>
+
+        let count = 0;
+
+        document.querySelector("#CGSS").addEventListener(event_touch_click, (e) =>
         {
-            copyid('CGSS')         
+            if (!count) {
+                // タップの回数を+1
+                ++count;
+                // 500ミリ秒以内に2回目のタップがされればダブルタップと判定
+                setTimeout(function () {
+                count = 0;
+                }, 500);
+
+            // ダブルタップ
+            } else {
+                // 拡大をさせない
+                e.preventDefault();
+                // 処理を記述
+                // 回数をリセット
+                count = 0
+                copyid('CGSS')
+            }
         });
         document.querySelector("#MLTD").addEventListener(event_touch_click, () =>
         {
-            copyid('MLTD')         
+            if (!count) {
+                // タップの回数を+1
+                ++count;
+                // 500ミリ秒以内に2回目のタップがされればダブルタップと判定
+                setTimeout(function () {
+                count = 0;
+                }, 500);
+
+            // ダブルタップ
+            } else {
+                // 拡大をさせない
+                e.preventDefault();
+                // 処理を記述
+                // 回数をリセット
+                count = 0
+                copyid('MLTD')
+            }
         });
         document.querySelector("#SCSP").addEventListener(event_touch_click, () =>
         {
-            copyid('SCSP')         
+            if (!count) {
+                // タップの回数を+1
+                ++count;
+                // 500ミリ秒以内に2回目のタップがされればダブルタップと判定
+                setTimeout(function () {
+                count = 0;
+                }, 500);
+
+            // ダブルタップ
+            } else {
+                // 拡大をさせない
+                e.preventDefault();
+                // 処理を記述
+                // 回数をリセット
+                count = 0
+                copyid('SCSP')
+            }
         });
         document.querySelector("#GK").addEventListener(event_touch_click, () =>
         {
-            copyid('GK')         
+            if (!count) {
+                // タップの回数を+1
+                ++count;
+                // 500ミリ秒以内に2回目のタップがされればダブルタップと判定
+                setTimeout(function () {
+                count = 0;
+                }, 500);
+
+            // ダブルタップ
+            } else {
+                // 拡大をさせない
+                e.preventDefault();
+                // 処理を記述
+                // 回数をリセット
+                count = 0
+                copyid('GK')
+            }
         });
     </script>
     <script>
