@@ -62,8 +62,8 @@
             "Twitter": "主にいる場所",
             "BlueSky": "Twitterで何かあった時用"
         },
-        "Tap_to_Copy" : "カードをタップしてIDをコピー",
-        "Click_to_Copy" : "カードをクリックしてIDをコピー",
+        "Tap_to_Copy" : "カードをダブルタップしてIDをコピー",
+        "Click_to_Copy" : "カードをダブルクリックしてIDをコピー",
         "Copy_Success" : "コピーに成功しました！",
         "game_ids" : "Game IDs",
         "HP" : "HP",
@@ -120,8 +120,8 @@
             "Twitter": "Mainly appear",
             "BlueSky": "for When X goes wrong"
         },
-        "Tap_to_Copy" : "Tap this card to copy ID",
-        "Click_to_Copy" : "Click this card to copy ID",
+        "Tap_to_Copy" : "Tap twice to copy ID",
+        "Click_to_Copy" : "Click twice to copy ID",
         "Copy_Success" : "ID Copyed Successfully!",
         "game_ids" : "Game IDs",
         "HP" : "My Page()",
@@ -178,8 +178,8 @@
             "Twitter": "在這里主要活動",
             "BlueSky": "當Twitter故障時"
         },
-        "Tap_to_Copy" : "點選複製ID",
-        "Click_to_Copy" : "點選複製ID",
+        "Tap_to_Copy" : "按兩下複製ID",
+        "Click_to_Copy" : "按兩下複製ID",
         "Copy_Success" : "複製了ID！",
         "game_ids" : "遊戲 IDs",
         "SNS" : "SNS"
@@ -235,8 +235,8 @@
             "Twitter": "在这里主要活動",
             "BlueSky": "當Twitter故障時"
         },
-        "Tap_to_Copy" : "点击复制ID",
-        "Click_to_Copy" : "点击复制ID",
+        "Tap_to_Copy" : "双击复制ID",
+        "Click_to_Copy" : "双击复制ID",
         "Copy_Success" : "复制了ID！",
         "game_ids" : "游戏 IDs",
         "SNS" : "SNS"
@@ -292,8 +292,8 @@
             "Twitter": "메인",
             "BlueSky": "Twitter가 이상한 떼 활동"
         },
-        "Tap_to_Copy" : "탑하여 ID 복사",
-        "Click_to_Copy" : "클릭하여 ID 복사",
+        "Tap_to_Copy" : "더블 탭하여 ID 복사",
+        "Click_to_Copy" : "더블 클릭하여 ID 복사",
         "Copy_Success" : "ID을 복사했습니다！",
         "game_ids" : "게임 IDs",
         "SNS" : "SNS"
