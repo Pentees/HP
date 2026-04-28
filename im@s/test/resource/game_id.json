@@ -1,0 +1,16 @@
+{
+    "elements":["CGSS", "MLTD", "SCSP", "GK"],
+    "defines" :
+    {
+        "CGSS" : "iDolm@ster_CGSS",
+        "MLTD" : "iDolm@ster_MLTD",
+        "SCSP" : "iDolm@ster_SCSP",
+        "GK" : "Hatsuboshi_iDolm@ster",
+        "BA_JP" : "Blue_Archive_JP"
+    },
+    "iDolm@ster_CGSS":"886996164",
+    "iDolm@ster_MLTD":"95QR7M4A",
+    "iDolm@ster_SCSP":"DWYRW8EAC",
+    "Hatsuboshi_iDolm@ster":"K73RJ5KB",
+    "Blue_Archive_JP":"77970582"
+}

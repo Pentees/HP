@@ -1,0 +1,319 @@
+{
+    "language" : ["ja-JP", "en-US","zh-TW"],
+    "name" : ["日本語", "English(US)","繁體中文(台灣)"],
+    "idols":["Haruka","Rin","Shizuka","Mano","Kotone"],
+    "SNS" : ["HP","Twitter","BlueSky"],
+    "color":
+    {
+        "AS":"#f34f6d",
+        "CG":"#2681c8",
+        "ML":"#ffc30b",
+        "SC":"#8dbbff",
+        "GK":"#f39800"
+    },
+    "background_color":
+    {
+        "AS":"#4ff3d5",
+        "CG":"#c86d26",
+        "ML":"#0b47ff",
+        "SC":"#ffd18d",
+        "GK":"#005bf3"
+    },
+    "background_opacity":
+    {
+        "AS":"0.050",
+        "CG":"0.075",
+        "ML":"0.20",
+        "SC":"0.22",
+        "GK":"0.05"
+    },
+    "ja-JP":
+    {
+        "title_prefics" : "",
+        "title_sufics" : "の超簡単な紹介ページ",
+        "name": "ノブP",
+        "about_title_prefics" : "「",
+        "about_title_sufics" : "ってどんなヤツ？」の表示を見るやつ",
+        "describe" : "一行目<br>ここはあきはばら<br>もう休み無いゾ♡",
+        "idols":
+        {
+            "head": "担当たち",
+            "body": 
+            {
+                "Haruka" : "天海春香",
+                "Miki" : "星井美希",
+                "Rin" : "渋谷凛",
+                "Anzu" : "双葉杏",
+                "Shizuka" : "最上静香",
+                "Mano" : "櫻木真乃",
+                "Hiori" : "風野灯織",
+                "Meguru" : "八宮めぐる",
+                "Kotone" : "藤田ことね"
+            }
+        },
+        "Group":
+        {
+            "AS":"765PRO ALLSTARS",
+            "CG":"Cinderella Girls",
+            "ML":"765PRO MILLIONSTARS",
+            "SC":"Shiny Colors",
+            "GK":"初星学園"
+        },
+        "Game_Name":
+        {
+            "iDolm@ster" : "アイマス",
+            "CGSS" : "デレステ",
+            "MLTD" : "ミリシタ",
+            "SCSP" : "シャニソン",
+            "GK" : "学マス"
+        },
+        "SNS_Name":
+        {
+            "HP": "HP",
+            "Twitter": "Twitter(X)",
+            "BlueSky": "BlueSky"
+        },
+        "SNS_describe":
+        {
+            "HP": "はよ作り直せ",
+            "Twitter": "主にいる場所",
+            "BlueSky": "Twitterで何かあった時用"
+        },
+        "Tap_to_Copy" : "カードをダブルタップするんや",
+        "Click_to_Copy" : "カードをダブルクリックするんや",
+        "Copy_Success" : "コピーに成功や",
+        "game_ids" : "Game IDs",
+        "HP" : "HP",
+        "SNS" : "SNS"
+    },
+    "en-US":
+    {
+        "title_prefics" : "Simply Introduction of ",
+        "title_sufics" : "",
+        "name": "Nobu P",
+        "about_title_prefics" : "Who are you, ",
+        "about_title_sufics" : "?",
+        "describe" : "This is Line 1<br>and this is Line 2<br>There are many shiny stars, but we can only few ones.",
+        "idols":
+        {
+            "head": "IDOLs",
+            "body": 
+            {
+                "Haruka" : "Haruka Amami",
+                "Miki" : "Miki Hoshii",
+                "Rin" : "Rin Shibuya",
+                "Anzu" : "Anzu Futaba",
+                "Mano" : "Mano Sakuragi",
+                "Hiori" : "Hiori Kazano",
+                "Meguru" : "Meguru Hachimiya",
+                "Kotone" : "Kotone Fujita"
+            }
+        },
+        "Group":
+        {
+            "AS":"765PRO ALLSTARS",
+            "CG":"Cinderella Girls",
+            "ML":"765PRO MILLIONSTARS",
+            "SC":"Shiny Colors",
+            "GK":"Hatsuboshi Gakuen"
+        },
+        "Game_Name":
+        {
+            "Idolm@ster" : "The iDolm@ster",
+            "CGSS": "Cinderella Girls Starlight Stage",
+            "MLTD": "Milion Live Theater Days",
+            "SCSP": "Shiny Colors Song for Prism",
+            "GK" : "Gakuen iDolm@ster"
+        },
+        "SNS_Name":
+        {
+            "HP": "HP",
+            "Twitter": "Twitter(X)",
+            "BlueSky": "BlueSky"
+        },
+        "SNS_describe":
+        {
+            "HP": "Only for Japanese! Not for Phones!",
+            "Twitter": "Mainly appear",
+            "BlueSky": "for When X goes wrong"
+        },
+        "Tap_to_Copy" : "Tap twice to copy ID",
+        "Click_to_Copy" : "Click twice to copy ID",
+        "Copy_Success" : "ID Copyed Successfully!",
+        "game_ids" : "Game IDs",
+        "HP" : "My Page()",
+        "SNS" : "SNS"
+    },
+    "zh-TW":
+    {
+        "title_prefics" : "",
+        "title_sufics" : "的簡要介紹",
+        "name": "Nobu P",
+        "about_title_prefics" : "",
+        "about_title_sufics" : "是誰？",
+        "describe" : "一<br>中華民國萬歲！",
+        "idols":
+        {
+            "head": "擔當偶像",
+            "body": 
+            {
+                "Haruka" : "天海 春香",
+                "Miki" : "星井 美希",
+                "Rin" : "渋谷 凛",
+                "Anzu" : "双葉 杏",
+                "Mano" : "櫻木 真乃",
+                "Hiori" : "風野 灯織",
+                "Meguru" : "八宮 巡",
+                "Kotone" : "藤田 琴音"
+            }
+        },
+        "Group":
+        {
+            "AS":"765PRO ALLSTARS",
+            "CG":"灰姑娘女孩",
+            "ML":"765PRO MILLIONSTARS",
+            "SC":"閃耀色彩",
+            "GK":"初星學園"
+        },
+        "Game_Name":
+        {
+            "Idolm@ster" : "偶像大師",
+            "CGSS": "灰姑娘女孩 星光舞台",
+            "MLTD": "百萬現場 劇場時光",
+            "SCSP": "閃耀色彩 Song for Prism",
+            "GK" : "學園偶像大師"
+        },
+        "SNS_Name":
+        {
+            "HP" : "我的網站",
+            "Twitter": "Twitter(X)",
+            "BlueSky": "BlueSky"
+        },
+        "SNS_describe":
+        {
+            "HP": "快！快！快！",
+            "Twitter": "在這里主要活動",
+            "BlueSky": "當Twitter故障時"
+        },
+        "Tap_to_Copy" : "按兩下複製ID",
+        "Click_to_Copy" : "按兩下複製ID",
+        "Copy_Success" : "複製了ID！",
+        "game_ids" : "遊戲 IDs",
+        "SNS" : "SNS"
+    },
+    "//":"以下未使用領域",
+    "zh-CN":
+    {
+        "title_prefics" : "",
+        "title_sufics" : "的简要介紹",
+        "name": "Nobu P",
+        "about_title_prefics" : "",
+        "about_title_sufics" : "是谁？",
+        "describe" : "新人制作人(从25.08)<br>追主要765AS，也其他品牌。<br>为了我4/3会转发很多春香P的貼子和图片，请理解Timeline会很活跃。<br>感谢看我的糟糕的中文!<br>",
+        "idols":
+        {
+            "head": "担当偶像",
+            "body": 
+            {
+                "Haruka" : "天海 春香",
+                "Miki" : "星井 美希",
+                "Rin" : "涩谷 凛",
+                "Anzu" : "双葉 杏",
+                "Mano" : "樱木 真乃",
+                "Hiori" : "風野 灯织",
+                "Meguru" : "八宫 巡",
+                "Kotone" : "藤田 琴音"
+            }
+        },
+        "Group":
+        {
+            "AS":"765PRO ALLSTARS",
+            "CG":"灰姑娘女孩",
+            "ML":"765PRO MILLIONSTARS",
+            "SC":"闪耀色彩",
+            "GK":"初星学园"
+        },
+        "Game_Name":
+        {
+            "Idolm@ster" : "偶像大师",
+            "CGSS": "灰姑娘女孩 星光舞台",
+            "MLTD": "百万现场 剧场时光",
+            "SCSP": "闪耀色彩 Song for Prism",
+            "GK" : "学园偶像大师"
+        },
+        "SNS_Name":
+        {
+            "HP" : "我的网站",
+            "Twitter": "Twitter(X)",
+            "BlueSky": "BlueSky"
+        },
+        "SNS_describe":
+        {
+            "HP": "限日文！不相容手机！",
+            "Twitter": "在这里主要活動",
+            "BlueSky": "當Twitter故障時"
+        },
+        "Tap_to_Copy" : "双击复制ID",
+        "Click_to_Copy" : "双击复制ID",
+        "Copy_Success" : "复制了ID！",
+        "game_ids" : "游戏 IDs",
+        "SNS" : "SNS"
+    },
+    "ko-KR":
+    {
+        "title_prefics" : "",
+        "title_sufics" : "의 소개",
+        "name": "노부P",
+        "about_title_prefics" : "<b>",
+        "about_title_sufics" : "</b>는 누구？",
+        "describe" : "새프로듀서(25.08보테)<br>765AS 메인，기타 브란드도 쫓는해요.<br>4/3에 일러스트와 사진을 톡히 많이 제게시해요.<br>제 서투른 한국어를 읽어서 감사합니다!<br>",
+        "idols":
+        {
+            "head": "담당",
+            "body": 
+            {
+                "Haruka" : "아마미 하루카",
+                "Miki" : "호시이 미키",
+                "Rin" : "시부야 린",
+                "Anzu" : "후타바 안즈",
+                "Mano" : "사쿠라기 마노",
+                "Hiori" : "가자노 히오리",
+                "Meguru" : "하지미야 메구루",
+                "Kotone" : "후지탸 코토네"
+            }
+        },
+        "Group":
+        {
+            "AS":"765PRO ALLSTARS",
+            "CG":"신데렐라 걸즈",
+            "ML":"765PRO MILLIONSTARS",
+            "SC":"샤이니 컬러즈",
+            "GK":"하투보씨"
+        },
+        "Game_Name":
+        {
+            "Idolm@ster" : "아이돌 마스터",
+            "CGSS": "데레스테",
+            "MLTD": "미리시타",
+            "SCSP": "샤니송",
+            "GK" : "가쿠마스 (확원마스)"
+        },
+        "SNS_Name":
+        {
+            "HP" : "제 사이트",
+            "Twitter": "Twitter(X)",
+            "BlueSky": "BlueSky"
+        },
+        "SNS_describe":
+        {
+            "HP": "일본어만！휴대폰은 안 대응합니다！",
+            "Twitter": "메인",
+            "BlueSky": "Twitter가 이상한 떼 활동"
+        },
+        "Tap_to_Copy" : "더블 탭하여 ID 복사",
+        "Click_to_Copy" : "더블 클릭하여 ID 복사",
+        "Copy_Success" : "ID을 복사했습니다！",
+        "game_ids" : "게임 IDs",
+        "SNS" : "SNS"
+    }
+}
