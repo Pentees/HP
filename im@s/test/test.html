@@ -107,9 +107,9 @@
     <script>
         const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time));
 
-        const lang_resource_path = "/HP/im@s/test/resource/lang.json"
-        const idols_resource_path = "/HP/im@s/test/resource/idols.json"
-        const game_id_path = "/HP/im@s/test/resource/game_id.json"
+        const lang_resource_path = "/HP/im@s/test/resource/lang.json";
+        const idol_resource_path = "/HP/im@s/test/resource/idols.json";
+        const game_id_path = "/HP/im@s/test/resource/game_id.json";
         
         console.info(navigator)
 
@@ -136,7 +136,7 @@
         {
             const res_lang = await fetch(lang_resource_path,{ cache: "no-cache"})
             const res_ids = await fetch(game_id_path,{ cache: "no-cache" })
-            const res_idol = await fetch(idols_resource_path,{ cache: "no-cache" })
+            const res_idol = await fetch(idol_resource_path,{ cache: "no-cache" })
 
             const resource = await res_lang.json()
             const ids = await res_ids.json()
@@ -220,9 +220,9 @@
         async function lang_change()
         {
             const lang = document.getElementById("lang").value
-            const res_lang = await fetch(lang_resource_path,{ cache: "no-cache"})
-            const res_ids = await fetch(game_id_path,{ cache: "no-cache" })
-            const res_idol = await fetch(idols_resource_path,{ cache: "no-cache" })
+            const res_lang = await fetch(lang_resource_path, { cache: "no-cache"})
+            const res_ids = await fetch(game_id_path, { cache: "no-cache" })
+            const res_idol = await fetch(idol_resource_path, { cache: "no-cache" })
             
             const resource = await res_lang.json()
             const ids = await res_ids.json()
