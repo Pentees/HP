@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>a</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/HP/im@s/test/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="menu_bar">
+            <h3 id="title"></h3>
+            <select name="language" id="lang" onchange="lang_change()"></select><br>
+        </div>
+        <div>
+            <h3 id="about_me_title" class="index_about"></h3>
+            <div id="about_me"></div>
+        </div>
+        <div id="IDOLs">
+            <h3 id="idols_title" class="index">担当たち</h3>
+            <div id="idols"></div>
+        </div>
+        
+        <div id="Game_ID">
+            <h3 class="index" id="game_ids_index">Game IDs</h3>
+            <div class="hover-card" id="CGSS" style="color: rgb(38,129,200); background: linear-gradient(135deg,rgba(38,129,200, 0.2), rgba(38,129,200, 0.5));">
+                <h3 id="CGSS_name">
+                    デレステ
+                </h3>
+                <div id="CGSS_id">
+                    ID: XXXXXXXXX
+                </div>
+                <div id="Copy_CGSS">
+                    カードをタップしてIDをコピー
+                </div>
+            </div>
+            <div id="MLTD" class="hover-card" style="color: rgb(255,192,11); background: linear-gradient(135deg,rgba(255,192,190, 0.3), rgba(255,192,11, 0.5));">
+                <h3 id="MLTD_name">
+                    ミリシタ
+                </h3>
+                <div id="MLTD_id">
+                    ID: XXXXXXXX
+                </div>
+                <div id="Copy_MLTD">
+                    カードをタップしてIDをコピー
+                </div>
+            </div>
+            <div id="SCSP" class="hover-card" style="color:rgb(141, 187, 255); background: linear-gradient(135deg,rgba(141, 187, 255, 0.2), rgba(141, 187, 255, 0.75));">
+                <h3 id="SCSP_name">
+                    シャニソン
+                </h3>
+                <div id="SCSP_id">
+                    ID: XXXXXXXXX
+                </div>
+                <div id="Copy_SCSP">
+                    カードをタップしてIDをコピー
+                </div>
+            </div>
+            <div id="GK" class="hover-card" style="color: rgb(243, 152, 0); background: linear-gradient(135deg,rgba(243, 152, 0, 0.25), rgba(243, 152, 0, 0.5));">
+                <h3 id="GK_name">
+                    学マス
+                </h3>
+                <div id="GK_id">
+                    ID: XXXXXXXX
+                </div>
+                <div id="Copy_GK">
+                    カードをタップしてIDをコピー
+                </div>
+            </div>
+        </div>
+        <h3 class="index">HP</h3>
+            <div class="SNS-card">
+                <div class="card_main">
+                    <h3><a id="HP" href="/HP/">HP</a></h3>
+                    <p id="describe_HP">はよ作り直せ</p>
+                </div>
+            </div>
+        <h3 class="index">SNS</h3>
+        <div id="SNS">
+            <div class="SNS-card">
+                <div class="img_SNS-card">
+                    <img src="/HP/im@s/resource/twitter_logo.png" style="width: 100%; height: 100%;">
+                </div>
+                <div class="card_main">
+                    <h3><a id="Twitter" href="https://x.com/pptx2061">Twitter</a></h3>
+                    <p id="describe_Twitter">主に出現する場所</p>
+                   </div>
+            </div>
+            <div class="SNS-card">
+                <div class="img_SNS-card">
+                    <img src="/HP/im@s/resource/bluesky_logo.png" style="width: 100%; height: 100%;">
+                </div>
+                <div class="card_main">
+                    <h3><a id="BlueSky" href="https://bsky.app/profile/pptx2061.bsky.social">BlueSky</a></h3>
+                    <p id="describe_BlueSky">Twitterに入れないときに使用</p>
+                </div>
+            </div>
+        </div>
+        <div id="JST"></div>
+        <div id="footer" style="text-align: center;">
+           Copytights 2026 ノブP/pptx2061<br>
+           手書きﾁｶﾚﾀ...
+        </div>
+    </body>
+    <script>
+        const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time));
+
+        console.info(navigator)
+
+        function isSmartPhone()
+        {
+            if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        const isTouchable = "ontouchstart" in window || (window.DocumentTouch && document instanceof DocumentTouch);
+        var event_touch_click = null
+        if(isTouchable)
+        {
+            event_touch_click = "touchend"
+        }
+        else
+        {
+            event_touch_click = "click"
+        }
+
+        async function main()
+        {
+            const res_lang = await fetch("/HP/im@s/test/lang.json",{ cache: "no-cache"})
+            const res_ids = await fetch("/HP/im@s/resource/game_id.json",{ cache: "no-cache" })
+            const res_idol = await fetch("/HP/im@s/test/idols.json",{ cache: "no-cache" })
+
+            const resource = await res_lang.json()
+            const ids = await res_ids.json()
+            const idol = await res_idol.json()
+            var options,idol_content=""
+            for(i = 0; i < resource["language"].length; i++)
+            {
+                console.info(resource["language"][i], resource["name"][i])
+                options += "<option value=" + resource["language"][i] + ">" + resource["name"][i] + "</option>"
+            }
+
+            document.getElementById("lang").innerHTML = options
+            const defaults = await resource["language"][0]
+
+            document.getElementById("title").innerHTML = await resource[defaults]["name"]
+            document.getElementById("about_me_title").innerHTML = await resource[defaults]["about_title_prefics"] + resource[defaults]["name"] + resource[defaults]["about_title_sufics"]
+            document.getElementById("about_me").innerHTML = await resource[defaults]["describe"]
+            
+            for(i = 0; i < resource["idols"].length; i++)
+            {
+                idol_name = resource["idols"][i]
+
+                var hexInput = resource["background_color"][idol[idol_name]["production_group"]]
+                const hex = hexInput.substring(1); // #を取り除く
+                const r = parseInt(hex.substring(0, 2), 16);
+                const g = parseInt(hex.substring(2, 4), 16);
+                const b = parseInt(hex.substring(4, 6), 16);
+
+                idol_content += "<div class=\"idol-card " + idol[idol_name]["production_group"] + "\" id=\"" + idol_name + "\" style=\" border-color:"+ idol[idol_name]["color"] +"; background-color: rgba(" + r +", "+ g +", "+ b +", "+ resource["background_opacity"][idol[idol_name]["production_group"]]+")" +"\">\n";
+                idol_content += "<h3 id=\"" + idol_name + "_Name\" class=\"idol_name\">"+ resource[defaults]["idols"]["body"][idol_name] +"</h4>\n";
+                idol_content += "<p id=\"" + idol_name + "_Group\" style=\"color:"+ resource["color"][idol[idol_name]["production_group"]] +"\">"+ resource[defaults]["Group"][idol[idol_name]["production_group"]] +"</p>\n";
+                idol_content += "</div>\n";
+                console.log(idol_content)
+            }
+            document.getElementById("idols_title").innerHTML = await resource[defaults]["idols"]["head"]
+            document.getElementById("idols").innerHTML = idol_content
+
+            for(i = 0;i < await ids["elements"].length;i++)
+            {
+                game_name_id = await ids["elements"][i]
+                document.getElementById(ids["elements"][i] + "_name").innerHTML = await resource[defaults]["Game_Name"][ids["elements"][i]]
+                document.getElementById(ids["elements"][i] + "_id").innerHTML = "ID: " + ids[ids["defines"][game_name_id]]
+                if(isSmartPhone() == true)
+                {
+                    document.getElementById("Copy_"+ids["elements"][i]).innerHTML = await resource[defaults]["Tap_to_Copy"]
+                }
+                else
+                {
+                    document.getElementById("Copy_"+ids["elements"][i]).innerHTML = await resource[defaults]["Click_to_Copy"]
+                }
+            }
+            var idol_content = "";
+
+            document.title = await resource[defaults]["title_prefics"] + await resource[defaults]["name"] + await resource[defaults]["title_sufics"]
+            document.getElementById("title").innerHTML = document.title
+        }
+
+        async function copyid(game_name)
+        {
+            const res_lang = await fetch("/HP/im@s/test/lang.json",{ cache: "no-cache"})
+            const res_ids = await fetch("/HP/im@s/resource/game_id.json",{ cache: "no-cache" })
+            const ids = await res_ids.json()
+            const lang_json = await res_lang.json()
+            game_json_name = await ids["defines"][game_name]
+            game_id = await ids[game_json_name]
+            const lang = document.getElementById("lang").value
+            console.log(await ids[game_json_name])
+            navigator.clipboard.writeText(await ids[game_json_name])
+            document.getElementById("Copy_"+game_name).innerHTML = await lang_json[lang]["Copy_Success"]
+            await sleep(1500)
+            if(isSmartPhone() == true)
+            {
+                document.getElementById("Copy_"+game_name).innerHTML = await lang_json[lang]["Tap_to_Copy"]
+            }
+            else
+            {
+                document.getElementById("Copy_"+game_name).innerHTML = await lang_json[lang]["Click_to_Copy"]
+            }
+        }
+
+        async function lang_change()
+        {
+            const lang = document.getElementById("lang").value
+            const res_lang = await fetch("/HP/im@s/test/lang.json",{ cache: "no-cache"})
+            const res_ids = await fetch("/HP/im@s/resource/game_id.json",{ cache: "no-cache" })
+            const res_idol = await fetch("/HP/im@s/test/idols.json",{ cache: "no-cache" })
+            const resource = await res_lang.json()
+            const ids = await res_ids.json()
+            const idol = await res_idol.json()
+
+            document.getElementById("about_me").innerHTML = await resource[lang]["describe"]
+            document.getElementById("about_me_title").innerHTML = await resource[lang]["about_title_prefics"] + await resource[lang]["name"] + await resource[lang]["about_title_sufics"]
+
+            
+            
+            document.getElementById("idols_title").innerHTML = await resource[lang]["idols"]["head"]
+            for(i = 0; i < resource["idols"].length; i++)
+            {
+                idol_name = resource["idols"][i]
+                idol_group = idol[idol_name]["production_group"]
+                document.getElementById(idol_name+"_Name").innerHTML = await resource[lang]["idols"]["body"][idol_name]
+                document.getElementById(idol_name+"_Group").innerHTML = await resource[lang]["Group"][idol_group]
+            }
+            for(i = 0;i < await ids["elements"].length;i++)
+            {
+                var game_name = await ids["elements"][i]
+                document.getElementById(game_name+"_name").innerHTML = await resource[lang]["Game_Name"][game_name]
+                if(isSmartPhone() == true)
+                {
+                    document.getElementById("Copy_"+game_name).innerHTML = await resource[lang]["Tap_to_Copy"]
+                }
+                else
+                {
+                    document.getElementById("Copy_"+game_name).innerHTML = await resource[lang]["Click_to_Copy"]
+                }
+            }
+            for(i = 0;i < await resource["SNS"].length;i++)
+            {
+                document.getElementById("describe_"+resource["SNS"][i]).innerHTML = await resource[lang]["SNS_describe"][resource["SNS"][i]]
+                document.getElementById(resource["SNS"][i]).innerHTML = await resource[lang]["SNS_Name"][await resource["SNS"][i]]
+            }
+            document.getElementById("game_ids_index").innerHTML = await resource[lang]["game_ids"]
+            document.title = await resource[lang]["title_prefics"] + await resource[lang]["name"] + await resource[lang]["title_sufics"]
+            document.getElementById("title").innerHTML = document.title
+        }
+
+        main()
+
+        let count = 0;
+
+        function copy_id(e)
+        {
+            if (!count) {
+                // タップの回数を+1
+                ++count;
+                // 500ミリ秒以内に2回目のタップがされればダブルタップと判定
+                setTimeout(function () {
+                count = 0;
+                }, 500);
+
+            // ダブルタップ
+            } else {
+                // 拡大をさせない
+                e.preventDefault();
+                // 処理を記述
+                // 回数をリセット
+                count = 0
+                copyid('MLTD')
+            }
+        }
+        document.querySelector("#CGSS").addEventListener(event_touch_click, (e) =>
+        {
+            if (!count) {
+                // タップの回数を+1
+                ++count;
+                // 500ミリ秒以内に2回目のタップがされればダブルタップと判定
+                setTimeout(function () {
+                count = 0;
+                }, 500);
+
+            // ダブルタップ
+            } else {
+                // 拡大をさせない
+                e.preventDefault();
+                // 処理を記述
+                // 回数をリセット
+                count = 0
+                copyid('CGSS')
+            }
+        });
+        document.querySelector("#MLTD").addEventListener(event_touch_click, (e) =>
+        {
+            if (!count) {
+                // タップの回数を+1
+                ++count;
+                // 500ミリ秒以内に2回目のタップがされればダブルタップと判定
+                setTimeout(function () {
+                count = 0;
+                }, 500);
+
+            // ダブルタップ
+            } else {
+                // 拡大をさせない
+                e.preventDefault();
+                // 処理を記述
+                // 回数をリセット
+                count = 0
+                copyid('MLTD')
+            }
+        });
+        document.querySelector("#SCSP").addEventListener(event_touch_click, (e) =>
+        {
+            if (!count) {
+                // タップの回数を+1
+                ++count;
+                // 500ミリ秒以内に2回目のタップがされればダブルタップと判定
+                setTimeout(function () {
+                count = 0;
+                }, 500);
+
+            // ダブルタップ
+            } else {
+                // 拡大をさせない
+                e.preventDefault();
+                // 処理を記述
+                // 回数をリセット
+                count = 0
+                copyid('SCSP')
+            }
+        });
+        document.querySelector("#GK").addEventListener(event_touch_click, (e) =>
+        {
+            if (!count) {
+                // タップの回数を+1
+                ++count;
+                // 500ミリ秒以内に2回目のタップがされればダブルタップと判定
+                setTimeout(function () {
+                count = 0;
+                }, 500);
+
+            // ダブルタップ
+            } else {
+                // 拡大をさせない
+                e.preventDefault();
+                // 処理を記述
+                // 回数をリセット
+                count = 0
+                copyid('GK')
+            }
+        });
+    </script>
+    <script>
+        function clock_JST()
+        {
+            let nowTime = new Date();
+            let nowMonth  = nowTime.getMonth() + 1;
+            let nowDate  = nowTime.getDate();
+            let nowHour = nowTime.getHours() + (9 + Math.floor(nowTime.getTimezoneOffset()/60));
+            let nowMin  = nowTime.getMinutes() + nowTime.getTimezoneOffset() % 60;
+            let nowSec  = nowTime.getSeconds();
+            nowMin = nowMin.toString().padStart(2,"0")
+            nowSec = nowSec.toString().padStart(2,"0")
+            let msg = nowMonth + "/" + nowDate + " " + nowHour + ":" + nowMin + ":" + nowSec + " now (JST)";
+            document.getElementById("JST").innerHTML = msg;
+            return [nowMonth, nowDate, nowHour, nowMin, nowSec]
+        }
+        setInterval(clock_JST, 250);
+    </script>
+</html>
